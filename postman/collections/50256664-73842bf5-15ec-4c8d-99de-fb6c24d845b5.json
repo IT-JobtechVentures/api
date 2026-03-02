@@ -1673,10 +1673,8 @@
 					]
 				},
 				"url": {
-					"raw": "http://local.jobringer.com/api/job_list_api.php",
-					"protocol": "http",
+					"raw": "jobringer.com/api/job_list_api.php",
 					"host": [
-						"local",
 						"jobringer",
 						"com"
 					],
