@@ -549,7 +549,7 @@
 					"response": []
 				},
 				{
-					"name": "jobseeker listing api Copy",
+					"name": "jobseeker detail api",
 					"id": "50256664-6da9f3f6-55f3-4d0a-b4c1-5f0040aee190",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
