@@ -535,6 +535,84 @@
 					"response": []
 				},
 				{
+					"name": "jobseeker listing api Copy",
+					"id": "50256664-8c320e41-9b01-4d75-8af8-d9a75c7e3ade",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "keywords",
+									"value": "sales manager",
+									"description": "//text",
+									"type": "text",
+									"uuid": "e3c6f657-bcda-4661-b18e-513a48190eab"
+								},
+								{
+									"key": "job_role",
+									"value": "",
+									"description": "//text",
+									"type": "text",
+									"uuid": "b5415638-f422-4ff6-8fac-e8787c2e2c5c",
+									"disabled": true
+								},
+								{
+									"key": "industry",
+									"value": "",
+									"type": "text",
+									"uuid": "feefa407-7b25-4121-9a4e-183063486817",
+									"disabled": true
+								},
+								{
+									"key": "functional_area",
+									"value": "",
+									"type": "text",
+									"uuid": "f15faa22-9ddf-44e9-990a-fb6c0d0bc2ee",
+									"disabled": true
+								},
+								{
+									"key": "city_id",
+									"value": "",
+									"type": "text",
+									"uuid": "76e40aac-f5ca-4c4c-aa8c-3b02e9332782",
+									"disabled": true
+								},
+								{
+									"key": "experience_from",
+									"value": "3",
+									"type": "text",
+									"uuid": "d9705911-d35c-4c2a-a60a-cd3e642ac1eb"
+								},
+								{
+									"key": "experience_to",
+									"value": "6",
+									"type": "text",
+									"uuid": "da124020-1be8-422a-8946-c14d7479d7fc"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://jobringer.com/api/jobseeker_listing_api.php",
+							"protocol": "https",
+							"host": [
+								"jobringer",
+								"com"
+							],
+							"path": [
+								"api",
+								"jobseeker_listing_api.php"
+							]
+						},
+						"description": "## Purpose\n\nSearch and retrieve a list of jobseekers filtered by keyword and optional criteria such as role, industry, functional area, city, and experience range.\n\n## Endpoint\n\n`POST https://jobringer.com/api/jobseeker_listing_api.php`\n\n## Request body\n\nContent-Type: `multipart/form-data`\n\n### Form-data fields\n\n**Required**\n\n- `keywords` _(string)_: Search text (e.g., profile keywords, title). Example: `sales manager`.\n    \n\n**Optional**\n\n- `job_role` _(string)_: Filter by job role identifier/name (API-specific).\n    \n- `industry` _(string)_: Filter by industry identifier/name (API-specific).\n    \n- `functional_area` _(string)_: Filter by functional area identifier/name (API-specific).\n    \n- `city_id` _(string|number)_: Filter by city identifier.\n    \n- `experience_from` _(number|string)_: Minimum experience (years).\n    \n- `experience_to` _(number|string)_: Maximum experience (years).\n    \n\n**Data for BasicSearch -**\n\n- `keywords` _(string)_: Search text (e.g., profile keywords, title). Example: `sales manager`.\n    \n- `experience_from` _(number|string)_: Minimum experience (years).\n    \n- `experience_to` _(number|string)_: Maximum experience (years).\n    \n\n**Data for AdvanceSearch -**\n\n- `job_role` _(string)_: Filter by job role identifier/name (API-specific).\n    \n- `keywords` _(string)_: Search text (e.g., profile keywords, title). Example: `sales manager`.\n    \n- `industry` _(string)_: Filter by industry identifier/name (API-specific).\n    \n- `functional_area` _(string)_: Filter by functional area identifier/name (API-specific).\n    \n- `city_id` _(string|number)_: Filter by city identifier.\n    \n- `experience_from` _(number|string)_: Minimum experience (years).\n    \n- `experience_to` _(number|string)_: Maximum experience (years).\n    \n- `resumeCheck` _(number|boolean)_: only retrieve j/s with resume if value is 1(use checkbox).\n    \n- `salary_from` _(number|string)_: Minimum salary.\n    \n- `salary_to` _(number|string)_: Maximum salary.\n    \n\n### Example form-data payload\n\n``` text\nkeywords=sales manager\njob_role=\nindustry=\nfunctional_area=\ncity_id=\nexperience_from=3\nexperience_to=6\n\n ```\n\n## Response (200 OK)\n\nReturns a JSON array of jobseeker objects.\n\n### Response summary (based on last successful response)\n\nEach array item includes fields similar to:\n\n- `id` _(string)_: Jobseeker ID\n    \n- `name` _(string)_\n    \n- `profile_title` _(string)_\n    \n- `keywords` _(string)_\n    \n- `bookmarked` _(boolean)_\n    \n- `viewed` _(string|number)_: View count/flag (returned as string in sample)\n    \n- `status_active` _(boolean)_\n    \n- `featured_resume` _(boolean)_\n    \n- `contact1` _(string)_: Primary phone\n    \n- `contact2` _(string)_: Secondary phone (may be empty)\n    \n- `wappno` _(string)_: WhatsApp number\n    \n\n## Notes\n\n- **Filtering behavior**: Empty/blank optional fields appear to be treated as “no filter” (inferred from request structure). Exact matching rules (partial vs exact, case sensitivity) are **unknown**.\n    \n- **Pagination**: Not observed in the request/response (no `page`, `limit`, `offset`, etc.). Pagination support is **unknown / not documented** for this endpoint."
+					},
+					"response": []
+				},
+				{
 					"name": "employer manage jobs list",
 					"id": "50256664-469bb5d5-8456-4dc2-b6a8-2451d7498fff",
 					"protocolProfileBehavior": {
