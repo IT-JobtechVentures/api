@@ -508,13 +508,27 @@
 									"key": "experience_from",
 									"value": "3",
 									"type": "text",
-									"uuid": "d9705911-d35c-4c2a-a60a-cd3e642ac1eb"
+									"uuid": "d9705911-d35c-4c2a-a60a-cd3e642ac1eb",
+									"disabled": true
 								},
 								{
 									"key": "experience_to",
 									"value": "6",
 									"type": "text",
-									"uuid": "da124020-1be8-422a-8946-c14d7479d7fc"
+									"uuid": "da124020-1be8-422a-8946-c14d7479d7fc",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"type": "text",
+									"uuid": "4171b402-3cae-4e39-8c12-b60834c8825e"
+								},
+								{
+									"key": "limit",
+									"value": "20",
+									"type": "text",
+									"uuid": "e2d3af55-9f37-495e-a078-d961a38273ca"
 								}
 							]
 						},
