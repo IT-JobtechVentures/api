@@ -1559,7 +1559,7 @@
 					"response": []
 				},
 				{
-					"name": "all cities fetch Copy",
+					"name": "all states fetch",
 					"id": "50256664-9cef1f4d-5ab6-49ad-bd88-3f9380b0fede",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1568,7 +1568,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://jobringer.com/api/city-fetch.php",
+							"raw": "https://jobringer.com/api/state_fetch_api.php",
 							"protocol": "https",
 							"host": [
 								"jobringer",
@@ -1576,7 +1576,31 @@
 							],
 							"path": [
 								"api",
-								"city-fetch.php"
+								"state_fetch_api.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all states fetch Copy",
+					"id": "50256664-d582c794-a439-403d-8144-119d552b52ca",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jobringer.com/api/state_fetch_api.php",
+							"protocol": "https",
+							"host": [
+								"jobringer",
+								"com"
+							],
+							"path": [
+								"api",
+								"state_fetch_api.php"
 							]
 						}
 					},
