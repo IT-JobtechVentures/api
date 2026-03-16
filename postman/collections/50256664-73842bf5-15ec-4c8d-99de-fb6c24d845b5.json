@@ -1583,7 +1583,7 @@
 					"response": []
 				},
 				{
-					"name": "all states fetch Copy",
+					"name": "jobringer stats",
 					"id": "50256664-d582c794-a439-403d-8144-119d552b52ca",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1592,7 +1592,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://jobringer.com/api/state_fetch_api.php",
+							"raw": "https://jobringer.com/api/jobringer_stats_api.php",
 							"protocol": "https",
 							"host": [
 								"jobringer",
@@ -1600,7 +1600,7 @@
 							],
 							"path": [
 								"api",
-								"state_fetch_api.php"
+								"jobringer_stats_api.php"
 							]
 						}
 					},
