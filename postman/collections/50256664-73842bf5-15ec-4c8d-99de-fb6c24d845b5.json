@@ -1559,6 +1559,30 @@
 					"response": []
 				},
 				{
+					"name": "all cities fetch Copy",
+					"id": "50256664-9cef1f4d-5ab6-49ad-bd88-3f9380b0fede",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jobringer.com/api/city-fetch.php",
+							"protocol": "https",
+							"host": [
+								"jobringer",
+								"com"
+							],
+							"path": [
+								"api",
+								"city-fetch.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "all countries fetch",
 					"id": "50256664-4b9e76a4-d192-48b9-ae88-c7f833fa53f6",
 					"protocolProfileBehavior": {
