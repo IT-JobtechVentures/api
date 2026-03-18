@@ -683,6 +683,210 @@
 						"description": "## Job list (Employer)\n\nReturns a paginated list of jobs for a given employer, optionally filtered by a search term.\n\n**Method:** `POST`  \n**URL:** `https://jobringer.com/api/job_list_employer_api.php`\n\n---\n\n## Request body (multipart/form-data)\n\nSend the following fields as **form-data**:\n\n| Field | Type | Required | Description |\n| --- | --- | --- | --- |\n| `employer_id` | string/number | Yes | Employer identifier whose jobs should be returned. Example: `84`. |\n| `search` | string | No | Free-text filter applied to the job list (commonly matches job title and/or related fields). Example: `sales`. Use an empty value to fetch without filtering. |\n| `page` | number | No | Page number (1-based). Default is typically `1` if omitted. Example: `1`, `2`, `3`. |\n| `limit` | number | No | Number of records per page. Example: `20`. |\n\n### Pagination behavior\n\n- **`page`** **is 1-based**: `page=1` returns the first set of results.\n    \n- Use `limit` to control page size.\n    \n- Increment `page` (`1 → 2 → 3 ...`) to fetch subsequent pages.\n    \n- When there are no more results, the API commonly returns an empty JSON array (`[]`).\n    \n\n---\n\n## Response\n\n### `200 OK`\n\nReturns a **JSON array** of job objects.\n\nTypical job fields include:\n\n- `id`, `permalink`, `title`\n    \n- status flags: `active`, `featured`, `deleted`, `published`, `drafted`, `expired`\n    \n- timestamps: `created`, `expiry_date`\n    \n- employer/job metadata: `posted_by`, `company`, `employer_id`\n    \n- counts/links: `applied_count`, `view_count`, `candidate_list`\n    \n\n> Note: Some fields may be `null` (e.g., `view_count`) depending on the record. \n  \n\n---\n\n## Quick example\n\n### Example request (form-data)\n\n``` text\nPOST https://jobringer.com/api/job_list_employer_api.php\nform-data:\n  employer_id: 84\n  search: sales\n  page: 1\n  limit: 20\n\n ```\n\n### Example response (truncated)\n\n``` json\n[\n  {\n    \"id\": \"57964\",\n    \"permalink\": \"6af59832\",\n    \"title\": \"Field Diabetes Educator | South India | ...\",\n    \"active\": \"Yes\",\n    \"featured\": \"0\",\n    \"deleted\": \"0\",\n    \"published\": \"1\",\n    \"drafted\": \"0\",\n    \"expired\": \"0\",\n    \"created\": \"2026-02-16 16:14:17\",\n    \"expiry_date\": \"2026-05-17\",\n    \"posted_by\": \"kaustubh\",\n    \"company\": \"HINDCO Consulting Services\",\n    \"employer_id\": \"84\",\n    \"applied_count\": \"3\",\n    \"view_count\": null,\n    \"candidate_list\": \"https://jobringer.com/candidate-list/6af...\"\n  }\n]\n\n ```"
 					},
 					"response": []
+				},
+				{
+					"name": "Job Post API",
+					"id": "50256664-47912986-d726-469a-86d0-9f3e8c1fa763",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "test",
+									"type": "text",
+									"uuid": "915eb83b-93bb-4b7b-a1c5-6abf77b8c974"
+								},
+								{
+									"key": "is_featured",
+									"value": "0",
+									"type": "text",
+									"uuid": "e75ad2be-56da-4f21-a6bb-46a7aa8ca893"
+								},
+								{
+									"key": "work_mode",
+									"value": "5",
+									"type": "text",
+									"uuid": "9808ea5c-115e-4c2b-a252-4e84590866fa"
+								},
+								{
+									"key": "employment_major",
+									"value": "5",
+									"type": "text",
+									"uuid": "1e648e4b-f9d6-4f40-92f7-ee5b002033fb"
+								},
+								{
+									"key": "employment_minor",
+									"value": "2",
+									"type": "text",
+									"uuid": "cc2d83ee-86d8-48e5-b421-ae4b1f283e0a"
+								},
+								{
+									"key": "description",
+									"value": "saeft",
+									"type": "text",
+									"uuid": "eb3c18a0-cf21-4ec0-9a12-ab2b5c8bf0b1"
+								},
+								{
+									"key": "hiring_for",
+									"value": "derr",
+									"type": "text",
+									"uuid": "6b2c212e-d52e-424d-b00a-a519131f7c11"
+								},
+								{
+									"key": "job_keywords",
+									"value": "asf",
+									"type": "text",
+									"uuid": "c9bc63a4-fe81-4712-9f4a-f7d586c15839"
+								},
+								{
+									"key": "country_id[]",
+									"value": "101",
+									"type": "text",
+									"uuid": "9c6c5893-e891-46bd-9a4d-15c5a43dc755"
+								},
+								{
+									"key": "city_id[]",
+									"value": "995",
+									"type": "text",
+									"uuid": "668b3d74-7e12-429b-9d9f-1cad0f421ff3"
+								},
+								{
+									"key": "is_hide_salary_details",
+									"value": "0",
+									"type": "text",
+									"uuid": "0bc11ec4-2277-43f6-956b-3472e0f180cf"
+								},
+								{
+									"key": "industry_type[]",
+									"value": "3",
+									"type": "text",
+									"uuid": "4b52f737-6114-4060-9540-dfcc6d7c780e"
+								},
+								{
+									"key": "functional_area[]",
+									"value": "2",
+									"type": "text",
+									"uuid": "34d02a8d-c2da-4cc3-a3b8-0df851373bc8"
+								},
+								{
+									"key": "job_role[]",
+									"value": "4",
+									"type": "text",
+									"uuid": "8994d16e-704f-452a-8616-8bb01b0f566a"
+								},
+								{
+									"key": "min_exp",
+									"value": "2",
+									"type": "text",
+									"uuid": "803e2031-1e5e-4c7e-b1e5-193c6b989b47"
+								},
+								{
+									"key": "max_exp",
+									"value": "6",
+									"type": "text",
+									"uuid": "a4697db8-20a5-4d5f-b2c0-dbf5c0fba448"
+								},
+								{
+									"key": "gender_preference",
+									"value": "1",
+									"type": "text",
+									"uuid": "0781397f-dd05-4b27-a2d0-1a901bf1cdbd"
+								},
+								{
+									"key": "candidate_preference[]",
+									"value": "2",
+									"type": "text",
+									"uuid": "afd87ea7-3150-44a8-a9cf-9c55e6e6dc16"
+								},
+								{
+									"key": "ctc_currency",
+									"value": "1",
+									"type": "text",
+									"uuid": "17a8cb20-4f12-408f-82d0-e531483bb46f"
+								},
+								{
+									"key": "min_ctc",
+									"value": "10000",
+									"type": "text",
+									"uuid": "f3ede060-6436-4835-a021-ac96ff5ebc0d"
+								},
+								{
+									"key": "max_ctc",
+									"value": "20000",
+									"type": "text",
+									"uuid": "8778c6a5-f8e8-4d95-abd1-e6a0b9f90c42"
+								},
+								{
+									"key": "ctc_duration",
+									"value": "per_annum",
+									"type": "text",
+									"uuid": "09fcb0b0-2bd7-4ea6-9575-8cb9354f71fd"
+								},
+								{
+									"key": "employer_id",
+									"value": "86",
+									"type": "text",
+									"uuid": "7a51fbc2-f290-4f1e-b21c-0a2f3c2bf83e"
+								},
+								{
+									"key": "posted_by",
+									"value": "84",
+									"type": "text",
+									"uuid": "3ce0cc60-2c06-4a51-8e63-e2daae139066"
+								},
+								{
+									"key": "action",
+									"value": "publish_job",
+									"type": "text",
+									"uuid": "192853b0-dc92-433a-b6d9-da53331c5849"
+								},
+								{
+									"key": "post_type",
+									"value": "0",
+									"type": "text",
+									"uuid": "13a812f8-3e19-44bc-96fa-2f7c33689489"
+								},
+								{
+									"key": "ref_code",
+									"value": "JOBRINGER-REFID-111111",
+									"type": "text",
+									"uuid": "e2bb6567-8b08-48ba-b695-61f95f6241c7",
+									"disabled": true
+								},
+								{
+									"key": "email_subject_line",
+									"value": "test_mail",
+									"type": "text",
+									"uuid": "993cedb1-8209-437c-8e16-c5a3c8738611"
+								},
+								{
+									"key": "candidate_preference[]",
+									"value": "3",
+									"type": "text",
+									"uuid": "3e5be560-29ed-4171-942a-9f2cc967ff98"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://jobringer.com/api/job_post_api.php",
+							"protocol": "https",
+							"host": [
+								"jobringer",
+								"com"
+							],
+							"path": [
+								"api",
+								"job_post_api.php"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"id": "50256664-32daf4ef-9e0e-4c35-bc8d-1e07e714203d"
@@ -1995,210 +2199,6 @@
 			"request": {
 				"method": "GET",
 				"header": []
-			},
-			"response": []
-		},
-		{
-			"name": "Job Post API",
-			"id": "50256664-47912986-d726-469a-86d0-9f3e8c1fa763",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "title",
-							"value": "test",
-							"type": "text",
-							"uuid": "915eb83b-93bb-4b7b-a1c5-6abf77b8c974"
-						},
-						{
-							"key": "is_featured",
-							"value": "0",
-							"type": "text",
-							"uuid": "e75ad2be-56da-4f21-a6bb-46a7aa8ca893"
-						},
-						{
-							"key": "work_mode",
-							"value": "5",
-							"type": "text",
-							"uuid": "9808ea5c-115e-4c2b-a252-4e84590866fa"
-						},
-						{
-							"key": "employment_major",
-							"value": "5",
-							"type": "text",
-							"uuid": "1e648e4b-f9d6-4f40-92f7-ee5b002033fb"
-						},
-						{
-							"key": "employment_minor",
-							"value": "2",
-							"type": "text",
-							"uuid": "cc2d83ee-86d8-48e5-b421-ae4b1f283e0a"
-						},
-						{
-							"key": "description",
-							"value": "saeft",
-							"type": "text",
-							"uuid": "eb3c18a0-cf21-4ec0-9a12-ab2b5c8bf0b1"
-						},
-						{
-							"key": "hiring_for",
-							"value": "derr",
-							"type": "text",
-							"uuid": "6b2c212e-d52e-424d-b00a-a519131f7c11"
-						},
-						{
-							"key": "job_keywords",
-							"value": "asf",
-							"type": "text",
-							"uuid": "c9bc63a4-fe81-4712-9f4a-f7d586c15839"
-						},
-						{
-							"key": "country_id[]",
-							"value": "101",
-							"type": "text",
-							"uuid": "9c6c5893-e891-46bd-9a4d-15c5a43dc755"
-						},
-						{
-							"key": "city_id[]",
-							"value": "995",
-							"type": "text",
-							"uuid": "668b3d74-7e12-429b-9d9f-1cad0f421ff3"
-						},
-						{
-							"key": "is_hide_salary_details",
-							"value": "0",
-							"type": "text",
-							"uuid": "0bc11ec4-2277-43f6-956b-3472e0f180cf"
-						},
-						{
-							"key": "industry_type[]",
-							"value": "3",
-							"type": "text",
-							"uuid": "4b52f737-6114-4060-9540-dfcc6d7c780e"
-						},
-						{
-							"key": "functional_area[]",
-							"value": "2",
-							"type": "text",
-							"uuid": "34d02a8d-c2da-4cc3-a3b8-0df851373bc8"
-						},
-						{
-							"key": "job_role[]",
-							"value": "4",
-							"type": "text",
-							"uuid": "8994d16e-704f-452a-8616-8bb01b0f566a"
-						},
-						{
-							"key": "min_exp",
-							"value": "2",
-							"type": "text",
-							"uuid": "803e2031-1e5e-4c7e-b1e5-193c6b989b47"
-						},
-						{
-							"key": "max_exp",
-							"value": "6",
-							"type": "text",
-							"uuid": "a4697db8-20a5-4d5f-b2c0-dbf5c0fba448"
-						},
-						{
-							"key": "gender_preference",
-							"value": "1",
-							"type": "text",
-							"uuid": "0781397f-dd05-4b27-a2d0-1a901bf1cdbd"
-						},
-						{
-							"key": "candidate_preference[]",
-							"value": "2",
-							"type": "text",
-							"uuid": "afd87ea7-3150-44a8-a9cf-9c55e6e6dc16"
-						},
-						{
-							"key": "ctc_currency",
-							"value": "1",
-							"type": "text",
-							"uuid": "17a8cb20-4f12-408f-82d0-e531483bb46f"
-						},
-						{
-							"key": "min_ctc",
-							"value": "10000",
-							"type": "text",
-							"uuid": "f3ede060-6436-4835-a021-ac96ff5ebc0d"
-						},
-						{
-							"key": "max_ctc",
-							"value": "20000",
-							"type": "text",
-							"uuid": "8778c6a5-f8e8-4d95-abd1-e6a0b9f90c42"
-						},
-						{
-							"key": "ctc_duration",
-							"value": "per_annum",
-							"type": "text",
-							"uuid": "09fcb0b0-2bd7-4ea6-9575-8cb9354f71fd"
-						},
-						{
-							"key": "employer_id",
-							"value": "86",
-							"type": "text",
-							"uuid": "7a51fbc2-f290-4f1e-b21c-0a2f3c2bf83e"
-						},
-						{
-							"key": "posted_by",
-							"value": "84",
-							"type": "text",
-							"uuid": "3ce0cc60-2c06-4a51-8e63-e2daae139066"
-						},
-						{
-							"key": "action",
-							"value": "publish_job",
-							"type": "text",
-							"uuid": "192853b0-dc92-433a-b6d9-da53331c5849"
-						},
-						{
-							"key": "post_type",
-							"value": "0",
-							"type": "text",
-							"uuid": "13a812f8-3e19-44bc-96fa-2f7c33689489"
-						},
-						{
-							"key": "ref_code",
-							"value": "JOBRINGER-REFID-111111",
-							"type": "text",
-							"uuid": "e2bb6567-8b08-48ba-b695-61f95f6241c7",
-							"disabled": true
-						},
-						{
-							"key": "email_subject_line",
-							"value": "test_mail",
-							"type": "text",
-							"uuid": "993cedb1-8209-437c-8e16-c5a3c8738611"
-						},
-						{
-							"key": "candidate_preference[]",
-							"value": "3",
-							"type": "text",
-							"uuid": "3e5be560-29ed-4171-942a-9f2cc967ff98"
-						}
-					]
-				},
-				"url": {
-					"raw": "https://jobringer.com/api/job_post_api.php",
-					"protocol": "https",
-					"host": [
-						"jobringer",
-						"com"
-					],
-					"path": [
-						"api",
-						"job_post_api.php"
-					]
-				}
 			},
 			"response": []
 		},
