@@ -2204,7 +2204,7 @@
 			"response": []
 		},
 		{
-			"name": "New Request",
+			"name": "job detail api",
 			"id": "50256664-d248f013-6283-406a-a247-1f4690440a92",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
