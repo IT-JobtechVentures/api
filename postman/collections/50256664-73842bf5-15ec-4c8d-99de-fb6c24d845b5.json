@@ -2214,6 +2214,18 @@
 				"header": []
 			},
 			"response": []
+		},
+		{
+			"name": "job detail api Copy",
+			"id": "50256664-520c1e8c-97fd-4c54-90de-404bba7e85bd",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
 		}
 	]
 }
