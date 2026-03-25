@@ -890,14 +890,37 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "delete employer",
 					"id": "50256664-0ea67871-a5e6-411b-9a2e-f81de0563891",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "employer_email",
+									"value": "dalvichirag009@gmail.com",
+									"type": "text",
+									"uuid": "16506bc8-9860-4f3c-b591-794bd5aaa39f"
+								}
+							]
+						},
+						"url": {
+							"raw": "local.jobringer.com/api/delete_employer_api.php",
+							"host": [
+								"local",
+								"jobringer",
+								"com"
+							],
+							"path": [
+								"api",
+								"delete_employer_api.php"
+							]
+						}
 					},
 					"response": []
 				}
