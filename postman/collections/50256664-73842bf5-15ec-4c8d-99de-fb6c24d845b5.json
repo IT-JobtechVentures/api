@@ -306,7 +306,7 @@
 							"formdata": [
 								{
 									"key": "super_user_email",
-									"value": "it.job11@jobtechventures.com",
+									"value": "dalvichirag0091@gmail.com",
 									"type": "text",
 									"uuid": "c62dddf7-a0aa-49e2-a352-eaa5f8103b55"
 								},
@@ -431,12 +431,6 @@
 									"value": "3",
 									"type": "text",
 									"uuid": "207acb25-dc0b-4e30-85e3-cc626fa45c9f"
-								},
-								{
-									"key": "company_unique_no",
-									"value": "RESU123455",
-									"type": "text",
-									"uuid": "1553ed5b-ea6b-4281-b0d2-72da4d15dd86"
 								}
 							]
 						},
