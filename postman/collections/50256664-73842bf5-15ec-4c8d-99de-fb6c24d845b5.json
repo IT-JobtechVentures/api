@@ -760,7 +760,8 @@
 									"key": "is_hide_salary_details",
 									"value": "0",
 									"type": "text",
-									"uuid": "0bc11ec4-2277-43f6-956b-3472e0f180cf"
+									"uuid": "0bc11ec4-2277-43f6-956b-3472e0f180cf",
+									"description": "0-dont hide ,1- hide"
 								},
 								{
 									"key": "industry_type[]",
@@ -796,7 +797,8 @@
 									"key": "gender_preference",
 									"value": "1",
 									"type": "text",
-									"uuid": "0781397f-dd05-4b27-a2d0-1a901bf1cdbd"
+									"uuid": "0781397f-dd05-4b27-a2d0-1a901bf1cdbd",
+									"description": "\"1\"=>\"Any\",\"2\"=>\"Male\",\"3\"=>\"Female\",\"4\"=>\"Other\""
 								},
 								{
 									"key": "candidate_preference[]",
@@ -808,7 +810,8 @@
 									"key": "ctc_currency",
 									"value": "1",
 									"type": "text",
-									"uuid": "17a8cb20-4f12-408f-82d0-e531483bb46f"
+									"uuid": "17a8cb20-4f12-408f-82d0-e531483bb46f",
+									"description": "\"1\" => \"₹ INR\", \"2\" => \"$ Dollar\""
 								},
 								{
 									"key": "min_ctc",
@@ -830,7 +833,7 @@
 								},
 								{
 									"key": "employer_id",
-									"value": "86",
+									"value": "54394",
 									"type": "text",
 									"uuid": "7a51fbc2-f290-4f1e-b21c-0a2f3c2bf83e"
 								},
@@ -841,16 +844,11 @@
 									"uuid": "3ce0cc60-2c06-4a51-8e63-e2daae139066"
 								},
 								{
-									"key": "action",
-									"value": "publish_job",
-									"type": "text",
-									"uuid": "192853b0-dc92-433a-b6d9-da53331c5849"
-								},
-								{
 									"key": "post_type",
 									"value": "0",
 									"type": "text",
-									"uuid": "13a812f8-3e19-44bc-96fa-2f7c33689489"
+									"uuid": "13a812f8-3e19-44bc-96fa-2f7c33689489",
+									"description": "0-normal job,1-premium job"
 								},
 								{
 									"key": "ref_code",
@@ -870,6 +868,13 @@
 									"value": "3",
 									"type": "text",
 									"uuid": "3e5be560-29ed-4171-942a-9f2cc967ff98"
+								},
+								{
+									"key": "post_action",
+									"value": "publish",
+									"type": "text",
+									"uuid": "192853b0-dc92-433a-b6d9-da53331c5849",
+									"disabled": true
 								}
 							]
 						},
@@ -925,7 +930,7 @@
 					"response": []
 				},
 				{
-					"name": "delete employer Copy",
+					"name": "employer active subscriptions",
 					"id": "50256664-4d02bac3-9f22-4b8e-b810-7969a3afb704",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -937,23 +942,23 @@
 							"mode": "formdata",
 							"formdata": [
 								{
-									"key": "employer_email",
-									"value": "dalvichirag009@gmail.com",
+									"key": "employer_id",
+									"value": "84",
 									"type": "text",
 									"uuid": "16506bc8-9860-4f3c-b591-794bd5aaa39f"
 								}
 							]
 						},
 						"url": {
-							"raw": "local.jobringer.com/api/delete_employer_api.php",
+							"raw": "https://jobringer.com/api/employer_active_subscriptions_fetch.php",
+							"protocol": "https",
 							"host": [
-								"local",
 								"jobringer",
 								"com"
 							],
 							"path": [
 								"api",
-								"delete_employer_api.php"
+								"employer_active_subscriptions_fetch.php"
 							]
 						}
 					},
