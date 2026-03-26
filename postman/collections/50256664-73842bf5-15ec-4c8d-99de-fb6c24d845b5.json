@@ -923,6 +923,41 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "delete employer Copy",
+					"id": "50256664-4d02bac3-9f22-4b8e-b810-7969a3afb704",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "employer_email",
+									"value": "dalvichirag009@gmail.com",
+									"type": "text",
+									"uuid": "16506bc8-9860-4f3c-b591-794bd5aaa39f"
+								}
+							]
+						},
+						"url": {
+							"raw": "local.jobringer.com/api/delete_employer_api.php",
+							"host": [
+								"local",
+								"jobringer",
+								"com"
+							],
+							"path": [
+								"api",
+								"delete_employer_api.php"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"id": "50256664-32daf4ef-9e0e-4c35-bc8d-1e07e714203d"
