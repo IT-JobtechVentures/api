@@ -959,14 +959,37 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "employer details",
 					"id": "50256664-65aea128-0f40-4200-8376-9d267755dbee",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "employer_id",
+									"value": "84",
+									"type": "text",
+									"uuid": "6c0d6b55-1a81-432e-9218-b15df8533e1b"
+								}
+							]
+						},
+						"url": {
+							"raw": "local.jobringer.com/api/employer_details_api.php",
+							"host": [
+								"local",
+								"jobringer",
+								"com"
+							],
+							"path": [
+								"api",
+								"employer_details_api.php"
+							]
+						}
 					},
 					"response": []
 				}
