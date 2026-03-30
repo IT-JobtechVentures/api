@@ -492,7 +492,7 @@
 					"response": []
 				},
 				{
-					"name": "employer signup api Copy",
+					"name": "employer update api",
 					"id": "50256664-18fc98a5-d066-4a3c-8f16-d671358e268e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -748,8 +748,7 @@
 								"api",
 								"employer_update_api.php"
 							]
-						},
-						"description": "## Purpose\n\nRegisters a new **Employer** account and company profile in Jobringer.\n\n## Endpoint\n\n**POST** `https://jobringer.com/api/employer_signup_api.php`\n\n## Content-Type\n\n`multipart/form-data`\n\n## Body (form-data)\n\nSend the following keys as **form-data** fields.\n\n### Required / commonly required fields (visible in this request)\n\n| Field | Type | Description | Example |\n| --- | --- | --- | --- |\n| `super_user_email` | string (email) | Email address for the employer super user (login). Must be a valid email format and typically must be unique. | `it.job11@jobtechventures.com` |\n| `company_name` | string | Company / employer display name. | `test company` |\n| `super_user_password` | string | Password for the super user. Must satisfy backend password rules (length/complexity). | `Str0nt!um` |\n| `company_url` | string (url) | Company website URL. | `http://www.hindco.com/` |\n| `employer_type` | number/string | Employer type identifier (backend enum/id). | `4` |\n| `company_description` | string | Short description of the company. | `test desc` |\n| `employee_strength` | number/string | Company size identifier (backend enum/id). | `2` |\n| `country_id` | number/string | Country identifier. | `101` |\n| `state_id` | number/string | State identifier. | `1` |\n| `city_id` | number/string | City identifier. | `995` |\n| `office_address` | string | Company office address. | `mumbaii` |\n\n### Additional fields\n\nThis request tab includes **additional form-data rows not shown here** (11 more rows in the current saved request). The backend may require additional fields depending on the employer type, location, or other validation rules.\n\n## Validation notes\n\n- Use a **unique** `super_user_email` when creating a new employer.\n    \n- `super_user_password` must meet backend password complexity/length requirements.\n    \n- IDs like `country_id`, `state_id`, `city_id`, `employer_type`, and `employee_strength` must match valid backend reference values.\n    \n- If validation fails, expect a non-201 response with `success` indicating failure and a `message` describing the error.\n    \n\n## Responses\n\n### Success — 201\n\nResponse body is JSON with the following shape:\n\n``` json\n{\n  \"success\": \"1\",\n  \"message\": \"Registration successful\",\n  \"data\": {\n    \"employer_id\": 54229,\n    \"company_name\": \"test company\",\n    \"email\": \"it.job11@jobtechventures.com\",\n    \"redirect_url\": \"https://jobringer.com/employer/post-a-jo...\"\n  }\n}\n\n ```\n\n#### Fields\n\n- `success` (string): Success flag. Observed as `\"1\"` on success.\n    \n- `message` (string): Human-readable status message.\n    \n- `data` (object): Registration result payload.\n    \n    - `employer_id` (number): Newly created employer identifier.\n        \n    - `company_name` (string)\n        \n    - `email` (string)\n        \n    - `redirect_url` (string): URL to continue onboarding / next step after registration.\n        \n\n---\n\n**Collection:** [Jobringer APIs](https://collection/50256664-73842bf5-15ec-4c8d-99de-fb6c24d845b5)  \n**Request:** [employer signup api](https://request/50256664-946a896d-9648-4bc7-a0b3-bbdb392198db)"
+						}
 					},
 					"response": []
 				},
