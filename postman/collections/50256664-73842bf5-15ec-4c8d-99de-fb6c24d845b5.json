@@ -1237,7 +1237,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"jobseeker_id\":\"257259\",\r\n    \"password\":\"Str0nt!um\",\r\n    \"new_password\":\"L00k3r\"\r\n}",
+							"raw": "{\r\n    \"employer_id\":\"28006\",\r\n    \"password\":\"Str0nt!um\",\r\n    \"new_password\":\"L00k3r\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1245,7 +1245,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://jobringer.com/api/password_update_api.php",
+							"raw": "https://jobringer.com/api/password_update_employer_api.php",
 							"protocol": "https",
 							"host": [
 								"jobringer",
@@ -1253,7 +1253,7 @@
 							],
 							"path": [
 								"api",
-								"password_update_api.php"
+								"password_update_employer_api.php"
 							]
 						}
 					},
