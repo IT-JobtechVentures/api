@@ -2518,7 +2518,7 @@
 			"response": []
 		},
 		{
-			"name": "password update api Copy",
+			"name": "password update employer api",
 			"id": "50256664-5813bcb4-30e2-4a78-b886-1a33faab6b49",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
