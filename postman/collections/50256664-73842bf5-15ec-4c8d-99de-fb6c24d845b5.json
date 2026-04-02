@@ -1227,6 +1227,39 @@
 					"response": []
 				},
 				{
+					"name": "password update employer api",
+					"id": "50256664-5813bcb4-30e2-4a78-b886-1a33faab6b49",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jobseeker_id\":\"257259\",\r\n    \"password\":\"Str0nt!um\",\r\n    \"new_password\":\"L00k3r\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jobringer.com/api/password_update_api.php",
+							"protocol": "https",
+							"host": [
+								"jobringer",
+								"com"
+							],
+							"path": [
+								"api",
+								"password_update_api.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "employer active subscriptions",
 					"id": "50256664-4d02bac3-9f22-4b8e-b810-7969a3afb704",
 					"protocolProfileBehavior": {
@@ -2487,39 +2520,6 @@
 		{
 			"name": "password update api",
 			"id": "50256664-9b6f0fde-4cf8-4c94-b836-6ee1f9aab345",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"jobseeker_id\":\"257259\",\r\n    \"password\":\"Str0nt!um\",\r\n    \"new_password\":\"L00k3r\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://jobringer.com/api/password_update_api.php",
-					"protocol": "https",
-					"host": [
-						"jobringer",
-						"com"
-					],
-					"path": [
-						"api",
-						"password_update_api.php"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "password update employer api",
-			"id": "50256664-5813bcb4-30e2-4a78-b886-1a33faab6b49",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
