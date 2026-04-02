@@ -2518,6 +2518,39 @@
 			"response": []
 		},
 		{
+			"name": "password update api Copy",
+			"id": "50256664-5813bcb4-30e2-4a78-b886-1a33faab6b49",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"jobseeker_id\":\"257259\",\r\n    \"password\":\"Str0nt!um\",\r\n    \"new_password\":\"L00k3r\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jobringer.com/api/password_update_api.php",
+					"protocol": "https",
+					"host": [
+						"jobringer",
+						"com"
+					],
+					"path": [
+						"api",
+						"password_update_api.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "job apply api",
 			"id": "50256664-a0b5a974-cefd-4166-b456-bb95259d0233",
 			"protocolProfileBehavior": {
