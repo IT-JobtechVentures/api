@@ -1163,6 +1163,7 @@
 								{
 									"key": "candidate_preference[]",
 									"value": "3",
+									"description": "1 => \"Fresher/Intern\",\n2 => \"Differently Abled\",\n3 => \"Retired\",\n4 => \"Defence Veteran\",\n5 => \"On Sabattical\",\n6 => \"Government Employees\",\n7 => \"Other Industry\",\n8 => \"Self Employed\",\n9 => \"LGBTQ\"",
 									"type": "text",
 									"uuid": "3e5be560-29ed-4171-942a-9f2cc967ff98"
 								},
