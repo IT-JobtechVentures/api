@@ -1228,6 +1228,41 @@
 					"response": []
 				},
 				{
+					"name": "delete employer Copy",
+					"id": "50256664-3b4b8d22-e117-449a-a815-dbaf95acb069",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "employer_email",
+									"value": "dalvichirag009@gmail.com",
+									"type": "text",
+									"uuid": "16506bc8-9860-4f3c-b591-794bd5aaa39f"
+								}
+							]
+						},
+						"url": {
+							"raw": "local.jobringer.com/api/delete_employer_api.php",
+							"host": [
+								"local",
+								"jobringer",
+								"com"
+							],
+							"path": [
+								"api",
+								"delete_employer_api.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "password update employer api",
 					"id": "50256664-5813bcb4-30e2-4a78-b886-1a33faab6b49",
 					"protocolProfileBehavior": {
