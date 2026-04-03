@@ -1263,7 +1263,7 @@
 					"response": []
 				},
 				{
-					"name": "draft job Copy",
+					"name": "add subuser",
 					"id": "50256664-244f6c39-dd8f-4d2c-aca5-4844ae7bdf2a",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1275,15 +1275,51 @@
 							"mode": "formdata",
 							"formdata": [
 								{
-									"key": "job_id",
+									"key": "employer_id",
+									"value": "54698",
+									"type": "text",
+									"description": "id of employer whose subuser is being created"
+								},
+								{
+									"key": "company_name",
+									"value": "test user",
+									"type": "text",
+									"description": "subuser name"
+								},
+								{
+									"key": "super_user_email",
+									"value": "test@jobringer.com",
+									"type": "text",
+									"description": "email of subuser will work as username for login"
+								},
+								{
+									"key": "super_user_password",
+									"value": "Test@1234",
+									"type": "text",
+									"description": "password for subuser login "
+								},
+								{
+									"key": "is_manage_post",
 									"value": "",
 									"type": "text",
-									"uuid": "16506bc8-9860-4f3c-b591-794bd5aaa39f"
+									"disabled": true
+								},
+								{
+									"key": "is_manage_cand",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "is_search",
+									"value": "",
+									"type": "text",
+									"disabled": true
 								}
 							]
 						},
 						"url": {
-							"raw": "local.jobringer.com/api/delete_employer_api.php",
+							"raw": "local.jobringer.com/api/add_employer_subuser.php",
 							"host": [
 								"local",
 								"jobringer",
@@ -1291,7 +1327,7 @@
 							],
 							"path": [
 								"api",
-								"delete_employer_api.php"
+								"add_employer_subuser.php"
 							]
 						}
 					},
