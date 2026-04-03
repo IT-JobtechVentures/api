@@ -1241,16 +1241,16 @@
 							"formdata": [
 								{
 									"key": "job_id",
-									"value": "59666",
+									"value": "596662",
 									"type": "text",
 									"uuid": "16506bc8-9860-4f3c-b591-794bd5aaa39f"
 								}
 							]
 						},
 						"url": {
-							"raw": "local.jobringer.com/api/job_draft_api.php",
+							"raw": "https://jobringer.com/api/job_draft_api.php",
+							"protocol": "https",
 							"host": [
-								"local",
 								"jobringer",
 								"com"
 							],
@@ -1275,23 +1275,23 @@
 							"mode": "formdata",
 							"formdata": [
 								{
-									"key": "job_id",
-									"value": "59666",
+									"key": "employer_id",
+									"value": "84",
 									"type": "text",
 									"uuid": "16506bc8-9860-4f3c-b591-794bd5aaa39f"
 								}
 							]
 						},
 						"url": {
-							"raw": "local.jobringer.com/api/job_draft_api.php",
+							"raw": "https://jobringer.com/api/manage_subuser_api.php",
+							"protocol": "https",
 							"host": [
-								"local",
 								"jobringer",
 								"com"
 							],
 							"path": [
 								"api",
-								"job_draft_api.php"
+								"manage_subuser_api.php"
 							]
 						}
 					},
