@@ -1241,14 +1241,14 @@
 							"formdata": [
 								{
 									"key": "job_id",
-									"value": "",
+									"value": "59666",
 									"type": "text",
 									"uuid": "16506bc8-9860-4f3c-b591-794bd5aaa39f"
 								}
 							]
 						},
 						"url": {
-							"raw": "local.jobringer.com/api/delete_employer_api.php",
+							"raw": "local.jobringer.com/api/job_draft_api.php",
 							"host": [
 								"local",
 								"jobringer",
@@ -1256,7 +1256,7 @@
 							],
 							"path": [
 								"api",
-								"delete_employer_api.php"
+								"job_draft_api.php"
 							]
 						}
 					},
