@@ -1354,9 +1354,9 @@
 							]
 						},
 						"url": {
-							"raw": "local.jobringer.com/api/add_employer_subuser.php",
+							"raw": "https://jobringer.com/api/add_employer_subuser.php",
+							"protocol": "https",
 							"host": [
-								"local",
 								"jobringer",
 								"com"
 							],
