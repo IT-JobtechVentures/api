@@ -2193,6 +2193,30 @@
 					"response": []
 				},
 				{
+					"name": "all states fetch Copy",
+					"id": "50256664-fb266209-d438-4266-9f97-2f02fde62d9e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jobringer.com/api/state_fetch_api.php",
+							"protocol": "https",
+							"host": [
+								"jobringer",
+								"com"
+							],
+							"path": [
+								"api",
+								"state_fetch_api.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "jobringer stats",
 					"id": "50256664-d582c794-a439-403d-8144-119d552b52ca",
 					"protocolProfileBehavior": {
