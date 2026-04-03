@@ -1240,8 +1240,43 @@
 							"mode": "formdata",
 							"formdata": [
 								{
-									"key": "employer_email",
-									"value": "dalvichirag009@gmail.com",
+									"key": "job_id",
+									"value": "",
+									"type": "text",
+									"uuid": "16506bc8-9860-4f3c-b591-794bd5aaa39f"
+								}
+							]
+						},
+						"url": {
+							"raw": "local.jobringer.com/api/delete_employer_api.php",
+							"host": [
+								"local",
+								"jobringer",
+								"com"
+							],
+							"path": [
+								"api",
+								"delete_employer_api.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "draft job Copy",
+					"id": "50256664-244f6c39-dd8f-4d2c-aca5-4844ae7bdf2a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "job_id",
+									"value": "",
 									"type": "text",
 									"uuid": "16506bc8-9860-4f3c-b591-794bd5aaa39f"
 								}
