@@ -1263,6 +1263,41 @@
 					"response": []
 				},
 				{
+					"name": "draft job Copy",
+					"id": "50256664-b4eb2ebc-7d40-49f9-80e3-1f6fa7949915",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "job_id",
+									"value": "59666",
+									"type": "text",
+									"uuid": "16506bc8-9860-4f3c-b591-794bd5aaa39f"
+								}
+							]
+						},
+						"url": {
+							"raw": "local.jobringer.com/api/job_draft_api.php",
+							"host": [
+								"local",
+								"jobringer",
+								"com"
+							],
+							"path": [
+								"api",
+								"job_draft_api.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "add subuser",
 					"id": "50256664-244f6c39-dd8f-4d2c-aca5-4844ae7bdf2a",
 					"protocolProfileBehavior": {
