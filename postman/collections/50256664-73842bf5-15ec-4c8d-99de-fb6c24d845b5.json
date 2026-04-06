@@ -767,7 +767,7 @@
 							"formdata": [
 								{
 									"key": "keywords",
-									"value": "sales manager",
+									"value": "ios developer",
 									"description": "//text",
 									"type": "text",
 									"uuid": "e3c6f657-bcda-4661-b18e-513a48190eab"
@@ -775,45 +775,39 @@
 								{
 									"key": "job_role",
 									"value": "",
-									"description": "//text",
 									"type": "text",
 									"uuid": "b5415638-f422-4ff6-8fac-e8787c2e2c5c",
 									"disabled": true
 								},
 								{
 									"key": "industry",
-									"value": "",
+									"value": "166",
 									"type": "text",
-									"uuid": "feefa407-7b25-4121-9a4e-183063486817",
-									"disabled": true
+									"uuid": "feefa407-7b25-4121-9a4e-183063486817"
 								},
 								{
 									"key": "functional_area",
-									"value": "",
+									"value": "25",
 									"type": "text",
-									"uuid": "f15faa22-9ddf-44e9-990a-fb6c0d0bc2ee",
-									"disabled": true
+									"uuid": "f15faa22-9ddf-44e9-990a-fb6c0d0bc2ee"
 								},
 								{
 									"key": "city_id",
-									"value": "",
+									"value": "678",
 									"type": "text",
-									"uuid": "76e40aac-f5ca-4c4c-aa8c-3b02e9332782",
-									"disabled": true
+									"uuid": "76e40aac-f5ca-4c4c-aa8c-3b02e9332782"
 								},
 								{
 									"key": "experience_from",
 									"value": "3",
 									"type": "text",
-									"uuid": "d9705911-d35c-4c2a-a60a-cd3e642ac1eb",
-									"disabled": true
+									"uuid": "d9705911-d35c-4c2a-a60a-cd3e642ac1eb"
 								},
 								{
 									"key": "experience_to",
 									"value": "6",
 									"type": "text",
-									"uuid": "da124020-1be8-422a-8946-c14d7479d7fc",
-									"disabled": true
+									"uuid": "da124020-1be8-422a-8946-c14d7479d7fc"
 								},
 								{
 									"key": "page",
@@ -830,9 +824,9 @@
 							]
 						},
 						"url": {
-							"raw": "https://jobringer.com/api/jobseeker_listing_api.php",
-							"protocol": "https",
+							"raw": "local.jobringer.com/api/jobseeker_listing_api.php",
 							"host": [
+								"local",
 								"jobringer",
 								"com"
 							],
