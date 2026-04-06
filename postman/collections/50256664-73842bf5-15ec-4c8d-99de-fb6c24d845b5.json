@@ -2817,8 +2817,31 @@
 				"disableBodyPruning": true
 			},
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "job_id",
+							"value": "58153",
+							"type": "text",
+							"uuid": "a7ed97bd-dac4-4077-94b7-19d294fd025f"
+						}
+					]
+				},
+				"url": {
+					"raw": "local.jobringer.com/api/job_detail_employer_api.php",
+					"host": [
+						"local",
+						"jobringer",
+						"com"
+					],
+					"path": [
+						"api",
+						"job_detail_employer_api.php"
+					]
+				}
 			},
 			"response": []
 		},
