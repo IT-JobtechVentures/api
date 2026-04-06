@@ -773,13 +773,6 @@
 									"uuid": "e3c6f657-bcda-4661-b18e-513a48190eab"
 								},
 								{
-									"key": "job_role",
-									"value": "",
-									"type": "text",
-									"uuid": "b5415638-f422-4ff6-8fac-e8787c2e2c5c",
-									"disabled": true
-								},
-								{
 									"key": "industry",
 									"value": "166",
 									"type": "text",
