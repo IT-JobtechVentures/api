@@ -767,26 +767,26 @@
 							"formdata": [
 								{
 									"key": "keywords",
-									"value": "ios developer",
+									"value": "Engineer",
 									"description": "//text",
 									"type": "text",
 									"uuid": "e3c6f657-bcda-4661-b18e-513a48190eab"
 								},
 								{
 									"key": "industry",
-									"value": "166",
+									"value": "164",
 									"type": "text",
 									"uuid": "feefa407-7b25-4121-9a4e-183063486817"
 								},
 								{
 									"key": "functional_area",
-									"value": "25",
+									"value": "3",
 									"type": "text",
 									"uuid": "f15faa22-9ddf-44e9-990a-fb6c0d0bc2ee"
 								},
 								{
 									"key": "city_id",
-									"value": "678",
+									"value": "64",
 									"type": "text",
 									"uuid": "76e40aac-f5ca-4c4c-aa8c-3b02e9332782"
 								},
@@ -817,9 +817,9 @@
 							]
 						},
 						"url": {
-							"raw": "local.jobringer.com/api/jobseeker_listing_api.php",
+							"raw": "https://jobringer.com/api/jobseeker_listing_api.php",
+							"protocol": "https",
 							"host": [
-								"local",
 								"jobringer",
 								"com"
 							],
