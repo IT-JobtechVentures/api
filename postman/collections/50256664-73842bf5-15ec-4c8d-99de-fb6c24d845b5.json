@@ -1464,6 +1464,62 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "candidate actions by employer",
+					"id": "50256664-f2e84b08-a0d9-42d7-b604-b0850b5ef521",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "employer_id",
+									"value": "",
+									"type": "text",
+									"uuid": "3eb70298-1c2d-446b-b68a-cb636452eab3"
+								},
+								{
+									"key": "job_id",
+									"value": "",
+									"type": "text",
+									"uuid": "aa08ae45-5f84-41d4-bb09-25f181bac0ed"
+								},
+								{
+									"key": "jobseeker_id",
+									"value": "",
+									"type": "text",
+									"uuid": "5458c80b-5014-405a-bd6a-647b7cf12955"
+								},
+								{
+									"key": "status_id",
+									"value": "",
+									"type": "text",
+									"uuid": "95170e3c-e86a-48b2-845e-d1692bd166b9"
+								}
+							]
+						},
+						"url": {
+							"raw": "local.jobringer.com/api/jobseeker_job_status.php",
+							"host": [
+								"local",
+								"jobringer",
+								"com"
+							],
+							"path": [
+								"api",
+								"jobseeker_job_status.php"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"id": "50256664-32daf4ef-9e0e-4c35-bc8d-1e07e714203d"
