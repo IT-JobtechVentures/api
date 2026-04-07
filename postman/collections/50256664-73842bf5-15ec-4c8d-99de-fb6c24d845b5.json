@@ -1482,27 +1482,31 @@
 							"formdata": [
 								{
 									"key": "employer_id",
-									"value": "",
+									"value": "84",
 									"type": "text",
-									"uuid": "3eb70298-1c2d-446b-b68a-cb636452eab3"
+									"uuid": "3eb70298-1c2d-446b-b68a-cb636452eab3",
+									"description": "id of employer"
 								},
 								{
 									"key": "job_id",
-									"value": "",
+									"value": "5329",
 									"type": "text",
-									"uuid": "aa08ae45-5f84-41d4-bb09-25f181bac0ed"
+									"uuid": "aa08ae45-5f84-41d4-bb09-25f181bac0ed",
+									"description": "id of job applied by jobseeker"
 								},
 								{
 									"key": "jobseeker_id",
-									"value": "",
+									"value": "257259",
 									"type": "text",
-									"uuid": "5458c80b-5014-405a-bd6a-647b7cf12955"
+									"uuid": "5458c80b-5014-405a-bd6a-647b7cf12955",
+									"description": "jobseeker on whom action is performed"
 								},
 								{
 									"key": "status_id",
-									"value": "",
+									"value": "rejected",
 									"type": "text",
-									"uuid": "95170e3c-e86a-48b2-845e-d1692bd166b9"
+									"uuid": "95170e3c-e86a-48b2-845e-d1692bd166b9",
+									"description": "shortlisted,rejected,on_hold"
 								}
 							]
 						},
