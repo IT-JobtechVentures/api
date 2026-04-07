@@ -1424,7 +1424,7 @@
 					"response": []
 				},
 				{
-					"name": "otp send employer",
+					"name": "employer notifications",
 					"id": "50256664-eb5d2f79-5fed-47dc-8ab0-79486e2977e5",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1436,16 +1436,24 @@
 						"method": "POST",
 						"header": [],
 						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"email\":\" chiragdalvi2712@gmail.com\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "employer_id",
+									"value": "84",
+									"type": "text",
+									"uuid": "c520d1e6-012d-4cb5-bab2-35e9b9a5acd2"
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"type": "text",
+									"uuid": "a0c6aae1-f07b-418f-9917-292fab2137c0"
 								}
-							}
+							]
 						},
 						"url": {
-							"raw": "https://jobringer.com/api/user_login_api.php?endpoint=send-otp-employer",
+							"raw": "https://jobringer.com/api/notifications_api_employer.php",
 							"protocol": "https",
 							"host": [
 								"jobringer",
@@ -1453,13 +1461,7 @@
 							],
 							"path": [
 								"api",
-								"user_login_api.php"
-							],
-							"query": [
-								{
-									"key": "endpoint",
-									"value": "send-otp-employer"
-								}
+								"notifications_api_employer.php"
 							]
 						}
 					},
@@ -1511,9 +1513,9 @@
 							]
 						},
 						"url": {
-							"raw": "local.jobringer.com/api/jobseeker_job_status.php",
+							"raw": "https://jobringer.com/api/jobseeker_job_status.php",
+							"protocol": "https",
 							"host": [
-								"local",
 								"jobringer",
 								"com"
 							],
