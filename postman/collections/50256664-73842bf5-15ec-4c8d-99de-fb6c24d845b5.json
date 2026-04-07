@@ -27,7 +27,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://jobringer.com/api/user_login_api.php?endpoint=check-employer",
+							"raw": "https://jobringer.com/api/user_login_api.php?endpoint=send-otp-employer",
 							"protocol": "https",
 							"host": [
 								"jobringer",
@@ -40,7 +40,7 @@
 							"query": [
 								{
 									"key": "endpoint",
-									"value": "check-employer"
+									"value": "send-otp-employer"
 								}
 							]
 						},
