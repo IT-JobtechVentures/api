@@ -95,7 +95,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"email\":\" test_user@jobringer.com\"\r\n}",
+									"raw": "{\r\n    \"email\":\" test_user1@jobringer.com\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -103,7 +103,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://jobringer.com/api/user_login_api.php?endpoint=check-employer",
+									"raw": "https://jobringer.com/api/user_login_api.php?endpoint=send-otp-employer",
 									"protocol": "https",
 									"host": [
 										"jobringer",
@@ -116,7 +116,7 @@
 									"query": [
 										{
 											"key": "endpoint",
-											"value": "check-employer"
+											"value": "send-otp-employer"
 										}
 									]
 								}
