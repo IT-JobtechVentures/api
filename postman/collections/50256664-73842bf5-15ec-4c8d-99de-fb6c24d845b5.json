@@ -3002,7 +3002,7 @@
 			"response": []
 		},
 		{
-			"name": "jobseeker create order",
+			"name": "employer create order",
 			"id": "50256664-fec42ea8-d720-4c23-b9f2-285e837c2f4f",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
