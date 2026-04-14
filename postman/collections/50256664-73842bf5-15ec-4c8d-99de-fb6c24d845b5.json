@@ -1652,6 +1652,142 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "verify employer payment",
+					"id": "50256664-68ad71fd-c32d-4e6a-bf87-bc73132ae7fb",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "razorpay_payment_id",
+									"value": "pay_SdLnFIv8se52eB",
+									"description": "//retrieve data from razorpay sucess api response",
+									"type": "text",
+									"uuid": "30225495-1357-471a-8041-256de2e65a53"
+								},
+								{
+									"key": "razorpay_order_id",
+									"value": "order_SdLn6GVIus0nUe",
+									"description": "//retrieve data from razorpay sucess api response",
+									"type": "text",
+									"uuid": "4ba7ce66-8c6e-49bc-a962-df307ae7b08d"
+								},
+								{
+									"key": "razorpay_signature",
+									"value": "cd544670841b8c64b8cfcee12da45c98d625a36ad1151ee18578793146648e4f",
+									"description": "//retrieve data from razorpay sucess api response",
+									"type": "text",
+									"uuid": "8a1cbab4-ec55-4574-87e2-1b093aedb427"
+								},
+								{
+									"key": "order_id",
+									"value": "order_SdLn6GVIus0nUe",
+									"description": "//retrieve data from razorpay sucess api response",
+									"type": "text",
+									"uuid": "2d015816-d096-4284-bd88-ad91486d3c0a"
+								},
+								{
+									"key": "key",
+									"value": "rzp_test_X0QbsFgKQ8OuPB",
+									"description": "//razorpay key given",
+									"type": "text",
+									"uuid": "16733ae0-3f3b-4db6-a3ac-f41a8e40abfd"
+								},
+								{
+									"key": "total_price",
+									"value": "619.50",
+									"description": "//carry data from create order api",
+									"type": "text",
+									"uuid": "6278316e-6dad-4d79-b5e8-163c19ccfb01"
+								},
+								{
+									"key": "pack_id",
+									"value": "6",
+									"description": "//carry data from create order api",
+									"type": "text",
+									"uuid": "b9a0f8bd-59f0-42d5-80c5-87878c9849d8"
+								},
+								{
+									"key": "pkId",
+									"value": "6",
+									"description": "//carry data from create order api",
+									"type": "text",
+									"uuid": "65d7336a-279a-402b-8e50-2ee67bde8fa1"
+								},
+								{
+									"key": "pack_name",
+									"value": "COMBOPAC",
+									"description": "//carry data from create order api",
+									"type": "text",
+									"uuid": "b8ff908f-24fb-4c85-b1fa-18216db13634"
+								},
+								{
+									"key": "employer_id",
+									"value": "84",
+									"description": "//carry data from create order api",
+									"type": "text",
+									"uuid": "90c0ea24-564a-4ed4-b77a-91f904eda615"
+								},
+								{
+									"key": "email",
+									"value": "prakashbansal@hindco.com",
+									"description": "//carry data from create order api",
+									"type": "text",
+									"uuid": "9c72a779-df81-4f23-bc1c-96c80cf2836e"
+								},
+								{
+									"key": "name",
+									"value": "HINDCO",
+									"description": "//carry data from create order api",
+									"type": "text",
+									"uuid": "e3be70e4-7b49-4373-9322-0fec5e8f76f7"
+								},
+								{
+									"key": "contact",
+									"value": "9820451402",
+									"type": "text",
+									"uuid": "11804e76-19ad-4107-bfae-f075237fb3a0",
+									"disabled": true
+								},
+								{
+									"key": "proc_to_checkout",
+									"value": "1",
+									"description": "//fixed flag",
+									"type": "text",
+									"uuid": "d859b75d-8fc5-4940-ad95-07186ed2ad79"
+								},
+								{
+									"key": "subscription_id",
+									"value": "JR-EMP-d22e5ae5",
+									"description": "//carry dat from create order api",
+									"type": "text",
+									"uuid": "e9cf259b-5ef5-402c-b5f7-c4bdee2ec82d"
+								}
+							]
+						},
+						"url": {
+							"raw": "local.jobringer.com/verify-payment-emp.php",
+							"host": [
+								"local",
+								"jobringer",
+								"com"
+							],
+							"path": [
+								"verify-payment-emp.php"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"id": "50256664-32daf4ef-9e0e-4c35-bc8d-1e07e714203d"
