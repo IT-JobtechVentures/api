@@ -1637,7 +1637,8 @@
 								"api",
 								"create_order_emp_api.php"
 							]
-						}
+						},
+						"description": "## Employer Create Order\n\nCreates a new order for an employer by associating a selected package with their account. This endpoint is used when an employer purchases or activates a job posting package.\n\n---\n\n### Request Details\n\n| Property     | Value                                                    |\n|--------------|----------------------------------------------------------|\n| **Method**   | `POST`                                                   |\n| **URL**      | `https://jobringer.com/api/create_order_emp_api.php`     |\n| **Content-Type** | `multipart/form-data`                               |\n\n---\n\n### Form-Data Parameters\n\n| Field         | Type   | Required | Description                                                                                  |\n|---------------|--------|----------|----------------------------------------------------------------------------------------------|\n| `employer_id` | text   | Yes      | The unique ID of the employer placing the order.                                             |\n| `pack_id`     | text   | Yes      | The ID of the package being ordered. Retrieved from the employer packages API.               |\n| `pack_name`   | text   | Yes      | The name of the package being ordered (e.g. `COMBOPAC`). Retrieved from the employer packages API. |\n\n---\n\n### Notes\n\n- `pack_id` and `pack_name` should be fetched from the employer packages API before calling this endpoint.\n- All three fields are required to successfully create an order."
 					},
 					"response": []
 				},
