@@ -1718,9 +1718,9 @@
 							]
 						},
 						"url": {
-							"raw": "local.jobringer.com/verify-payment-emp.php",
+							"raw": "https://jobringer.com/verify-payment-emp.php",
+							"protocol": "https",
 							"host": [
-								"local",
 								"jobringer",
 								"com"
 							],
