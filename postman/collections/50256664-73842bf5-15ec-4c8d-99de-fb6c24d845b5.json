@@ -292,48 +292,6 @@
 					]
 				},
 				{
-					"name": "employer packages",
-					"id": "50256664-abbe0018-63ff-4fa6-b450-66a74f521540",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "categories",
-									"value": "all",
-									"type": "text",
-									"uuid": "e3c6f657-bcda-4661-b18e-513a48190eab",
-									"description": "//all,job_posting_pack,combo_pack"
-								},
-								{
-									"key": "employer_type",
-									"value": "1",
-									"type": "text",
-									"uuid": "f6959888-f7ea-455a-948d-912d068b5370"
-								}
-							]
-						},
-						"url": {
-							"raw": "local.jobringer.com/api/employer_packages_api.php",
-							"host": [
-								"local",
-								"jobringer",
-								"com"
-							],
-							"path": [
-								"api",
-								"employer_packages_api.php"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "employer signup api",
 					"id": "50256664-946a896d-9648-4bc7-a0b3-bbdb392198db",
 					"protocolProfileBehavior": {
@@ -1541,6 +1499,48 @@
 							"path": [
 								"api",
 								"notifications_api_employer.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "employer packages",
+					"id": "50256664-abbe0018-63ff-4fa6-b450-66a74f521540",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "categories",
+									"value": "festive",
+									"type": "text",
+									"uuid": "e3c6f657-bcda-4661-b18e-513a48190eab",
+									"description": "//all,job_posting_pack,combo_pack"
+								},
+								{
+									"key": "employer_type",
+									"value": "1",
+									"type": "text",
+									"uuid": "f6959888-f7ea-455a-948d-912d068b5370"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://jobringer.com/api/employer_packages_api.php",
+							"protocol": "https",
+							"host": [
+								"jobringer",
+								"com"
+							],
+							"path": [
+								"api",
+								"employer_packages_api.php"
 							]
 						}
 					},
