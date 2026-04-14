@@ -1329,55 +1329,6 @@
 					"response": []
 				},
 				{
-					"name": "employer create order",
-					"id": "50256664-fec42ea8-d720-4c23-b9f2-285e837c2f4f",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "employer_id",
-									"value": "84",
-									"type": "text",
-									"uuid": "01f5d4e4-f558-4cec-bbc9-bc0ccfdfdbae"
-								},
-								{
-									"key": "pack_id",
-									"value": "6",
-									"description": "//retrieved from employer packages api",
-									"type": "text",
-									"uuid": "0d6e0200-962e-4ae7-8fef-21afa715116f"
-								},
-								{
-									"key": "pack_name",
-									"value": "COMBOPAC",
-									"description": "//retrieved from employer packages api",
-									"type": "text",
-									"uuid": "5e5a8d44-7503-40cb-a708-b2bf6c900770"
-								}
-							]
-						},
-						"url": {
-							"raw": "https://jobringer.com/api/create_order_emp_api.php",
-							"protocol": "https",
-							"host": [
-								"jobringer",
-								"com"
-							],
-							"path": [
-								"api",
-								"create_order_emp_api.php"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "subuser listing",
 					"id": "50256664-b4eb2ebc-7d40-49f9-80e3-1f6fa7949915",
 					"protocolProfileBehavior": {
@@ -1596,15 +1547,12 @@
 					"response": []
 				},
 				{
-					"name": "candidate actions by employer",
-					"id": "50256664-f2e84b08-a0d9-42d7-b604-b0850b5ef521",
+					"name": "employer create order",
+					"id": "50256664-fec42ea8-d720-4c23-b9f2-285e837c2f4f",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
-						"auth": {
-							"type": "noauth"
-						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -1614,34 +1562,26 @@
 									"key": "employer_id",
 									"value": "84",
 									"type": "text",
-									"uuid": "3eb70298-1c2d-446b-b68a-cb636452eab3",
-									"description": "id of employer"
+									"uuid": "01f5d4e4-f558-4cec-bbc9-bc0ccfdfdbae"
 								},
 								{
-									"key": "job_id",
-									"value": "5329",
+									"key": "pack_id",
+									"value": "6",
+									"description": "//retrieved from employer packages api",
 									"type": "text",
-									"uuid": "aa08ae45-5f84-41d4-bb09-25f181bac0ed",
-									"description": "id of job applied by jobseeker"
+									"uuid": "0d6e0200-962e-4ae7-8fef-21afa715116f"
 								},
 								{
-									"key": "jobseeker_id",
-									"value": "257259",
+									"key": "pack_name",
+									"value": "COMBOPAC",
+									"description": "//retrieved from employer packages api",
 									"type": "text",
-									"uuid": "5458c80b-5014-405a-bd6a-647b7cf12955",
-									"description": "jobseeker on whom action is performed"
-								},
-								{
-									"key": "status_id",
-									"value": "rejected",
-									"type": "text",
-									"uuid": "95170e3c-e86a-48b2-845e-d1692bd166b9",
-									"description": "shortlisted,rejected,on_hold"
+									"uuid": "5e5a8d44-7503-40cb-a708-b2bf6c900770"
 								}
 							]
 						},
 						"url": {
-							"raw": "https://jobringer.com/api/jobseeker_job_status.php",
+							"raw": "https://jobringer.com/api/create_order_emp_api.php",
 							"protocol": "https",
 							"host": [
 								"jobringer",
@@ -1649,7 +1589,7 @@
 							],
 							"path": [
 								"api",
-								"jobseeker_job_status.php"
+								"create_order_emp_api.php"
 							]
 						}
 					},
@@ -1786,6 +1726,66 @@
 							],
 							"path": [
 								"verify-payment-emp.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "candidate actions by employer",
+					"id": "50256664-f2e84b08-a0d9-42d7-b604-b0850b5ef521",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "employer_id",
+									"value": "84",
+									"type": "text",
+									"uuid": "3eb70298-1c2d-446b-b68a-cb636452eab3",
+									"description": "id of employer"
+								},
+								{
+									"key": "job_id",
+									"value": "5329",
+									"type": "text",
+									"uuid": "aa08ae45-5f84-41d4-bb09-25f181bac0ed",
+									"description": "id of job applied by jobseeker"
+								},
+								{
+									"key": "jobseeker_id",
+									"value": "257259",
+									"type": "text",
+									"uuid": "5458c80b-5014-405a-bd6a-647b7cf12955",
+									"description": "jobseeker on whom action is performed"
+								},
+								{
+									"key": "status_id",
+									"value": "rejected",
+									"type": "text",
+									"uuid": "95170e3c-e86a-48b2-845e-d1692bd166b9",
+									"description": "shortlisted,rejected,on_hold"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://jobringer.com/api/jobseeker_job_status.php",
+							"protocol": "https",
+							"host": [
+								"jobringer",
+								"com"
+							],
+							"path": [
+								"api",
+								"jobseeker_job_status.php"
 							]
 						}
 					},
