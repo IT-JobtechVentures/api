@@ -1349,21 +1349,23 @@
 								{
 									"key": "pack_id",
 									"value": "6",
+									"description": "//retrieved from employer packages api",
 									"type": "text",
 									"uuid": "0d6e0200-962e-4ae7-8fef-21afa715116f"
 								},
 								{
 									"key": "pack_name",
 									"value": "COMBOPAC",
+									"description": "//retrieved from employer packages api",
 									"type": "text",
 									"uuid": "5e5a8d44-7503-40cb-a708-b2bf6c900770"
 								}
 							]
 						},
 						"url": {
-							"raw": "local.jobringer.com/api/create_order_emp_api.php",
+							"raw": "https://jobringer.com/api/create_order_emp_api.php",
+							"protocol": "https",
 							"host": [
-								"local",
 								"jobringer",
 								"com"
 							],
