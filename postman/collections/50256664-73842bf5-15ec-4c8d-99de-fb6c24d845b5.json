@@ -2473,8 +2473,9 @@
 									"key": "job_id",
 									"type": "text",
 									"uuid": "68ba5d3c-1327-4c18-86d4-25148b6a1160",
-									"value": "52363",
-									"description": "//used for employer side to list all application for specfic job"
+									"value": "54",
+									"description": "//used for employer side to list all application for specfic job",
+									"disabled": true
 								},
 								{
 									"key": "employer_id",
@@ -2500,9 +2501,8 @@
 							]
 						},
 						"url": {
-							"raw": "local.jobringer.com/api/application_listing_api.php",
+							"raw": "jobringer.com/api/application_listing_api.php",
 							"host": [
-								"local",
 								"jobringer",
 								"com"
 							],
