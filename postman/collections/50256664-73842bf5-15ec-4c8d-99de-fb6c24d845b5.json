@@ -292,6 +292,86 @@
 					]
 				},
 				{
+					"name": "password verify employer Copy",
+					"id": "50256664-cc1ba0b5-844f-4f85-a839-4fcf4dceb40f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"test_user@jobringer.com\",\r\n    \"password\":\"Flittle@62\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jobringer.com/api/user_login_api.php?endpoint=verify-employer",
+							"protocol": "https",
+							"host": [
+								"jobringer",
+								"com"
+							],
+							"path": [
+								"api",
+								"user_login_api.php"
+							],
+							"query": [
+								{
+									"key": "endpoint",
+									"value": "verify-employer"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "50256664-afb97294-7fd5-40a8-987b-790f4e27839b",
+							"name": "password verify employer subuser",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"test_user@jobringer.com\",\r\n    \"password\":\"Flittle@62\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://jobringer.com/api/user_login_api.php?endpoint=verify-employer",
+									"protocol": "https",
+									"host": [
+										"jobringer",
+										"com"
+									],
+									"path": [
+										"api",
+										"user_login_api.php"
+									],
+									"query": [
+										{
+											"key": "endpoint",
+											"value": "verify-employer"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"responseTime": null,
+							"body": null
+						}
+					]
+				},
+				{
 					"name": "employer signup api",
 					"id": "50256664-946a896d-9648-4bc7-a0b3-bbdb392198db",
 					"protocolProfileBehavior": {
