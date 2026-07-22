@@ -1,0 +1,3409 @@
+{
+  "info": {
+    "_postman_id": "73842bf5-15ec-4c8d-99de-fb6c24d845b5",
+    "name": "Jobringer APIs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "50256664",
+    "_collection_link": "https://go.postman.co/collection/50256664-73842bf5-15ec-4c8d-99de-fb6c24d845b5?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "employer API",
+      "item": [
+        {
+          "name": "otp send employer",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\":\" test_user@jobringer.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://jobringer.com/api/user_login_api.php?endpoint=send-otp-employer",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "user_login_api.php"
+              ],
+              "query": [
+                {
+                  "key": "endpoint",
+                  "value": "send-otp-employer"
+                }
+              ]
+            },
+            "description": "## Send OTP (Employer)\n\nSends a one-time password (OTP) to an employer user's email address. Use this as the first step in an OTP-based verification/login flow.\n\n### Endpoint\n\n`POST https://jobringer.com/api/user_login_api.php?endpoint=send-otp-employer`\n\n### Required query parameter\n\n| Key | Required | Value |\n|---|---:|---|\n| `endpoint` | Yes | `send-otp-employer` |\n\n### Request headers\n\n- `Content-Type: application/json`\n\n### Request body (JSON)\n\n**Schema**\n\n```json\n{\n  \"email\": \"string\"\n}\n```\n\n**Example**\n\n```json\n{\n  \"email\": \"test_user@jobringer.com\"\n}\n```\n\n**Notes**\n\n- Trim leading/trailing whitespace from `email` before sending (e.g., avoid values like `\" test_user@jobringer.com\"`).\n- `email` should be a valid email format.\n\n### Success response\n\n**200 OK**\n\n```json\n{\n  \"success\": true,\n  \"message\": \"OTP sent successfully to your email\"\n}\n```\n\n### Errors / validation (general)\n\n- If `email` is missing/invalid or the user cannot be processed, the API may return an error response (commonly with `success: false` and a message). Ensure you validate input and handle non-200 responses in your client.\n"
+          },
+          "response": [
+            {
+              "name": "otp send employer success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\":\" dalvichirag0091@gmail.com\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://jobringer.com/api/user_login_api.php?endpoint=send-otp-employer",
+                  "protocol": "https",
+                  "host": [
+                    "jobringer",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "user_login_api.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "endpoint",
+                      "value": "send-otp-employer"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": null,
+              "header": null,
+              "cookie": [],
+              "body": null
+            },
+            {
+              "name": "otp send employer failure",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\":\" test_user1@jobringer.com\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://jobringer.com/api/user_login_api.php?endpoint=send-otp-employer",
+                  "protocol": "https",
+                  "host": [
+                    "jobringer",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "user_login_api.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "endpoint",
+                      "value": "send-otp-employer"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": null,
+              "header": null,
+              "cookie": [],
+              "body": null
+            }
+          ]
+        },
+        {
+          "name": "otp verify employer",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\":\"info@jobringer.com\",\r\n    \"password\":\"123456\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://jobringer.com/api/user_login_api.php?endpoint=verify-employer",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "user_login_api.php"
+              ],
+              "query": [
+                {
+                  "key": "endpoint",
+                  "value": "verify-employer",
+                  "description": "//both otp and password are checked wih same api request "
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "otp verify employer failure",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\":\"info@jobringer.com\",\r\n    \"password\":\"123456\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://jobringer.com/api/user_login_api.php?endpoint=verify-employer",
+                  "protocol": "https",
+                  "host": [
+                    "jobringer",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "user_login_api.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "endpoint",
+                      "value": "verify-employer",
+                      "description": "//both otp and password are checked wih same api request "
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": null,
+              "header": null,
+              "cookie": [],
+              "body": null
+            }
+          ]
+        },
+        {
+          "name": "password verify employer",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\":\"test_user@jobringer.com\",\r\n    \"password\":\"Flittle@62\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://jobringer.com/api/user_login_api.php?endpoint=verify-employer",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "user_login_api.php"
+              ],
+              "query": [
+                {
+                  "key": "endpoint",
+                  "value": "verify-employer"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "password verify employer subuser",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\":\"test_user@jobringer.com\",\r\n    \"password\":\"Flittle@62\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://jobringer.com/api/user_login_api.php?endpoint=verify-employer",
+                  "protocol": "https",
+                  "host": [
+                    "jobringer",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "user_login_api.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "endpoint",
+                      "value": "verify-employer"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": null,
+              "header": null,
+              "cookie": [],
+              "body": null
+            }
+          ]
+        },
+        {
+          "name": "forgot password employer",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\":\"chiragdalvi2712@gmail.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://jobringer.com/api/user_login_api.php?endpoint=forget-password-employer",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "user_login_api.php"
+              ],
+              "query": [
+                {
+                  "key": "endpoint",
+                  "value": "forget-password-employer"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "employer signup api",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "super_user_email",
+                  "value": "dalvichirag0092@gmail.com",
+                  "type": "text",
+                  "uuid": "c62dddf7-a0aa-49e2-a352-eaa5f8103b55"
+                },
+                {
+                  "key": "company_name",
+                  "value": "test company",
+                  "type": "text",
+                  "uuid": "5cad52d2-5c65-48af-94c1-8bc356e7b95c"
+                },
+                {
+                  "key": "super_user_password",
+                  "value": "Str0nt!um",
+                  "type": "text",
+                  "uuid": "3b00203d-dbbb-42b8-a3f4-926dced96809"
+                },
+                {
+                  "key": "company_url",
+                  "value": "http://www.hindco.com/",
+                  "type": "text",
+                  "uuid": "f4dc8b3a-1eca-4a50-816e-28243fdd022c"
+                },
+                {
+                  "key": "employer_type",
+                  "value": "4",
+                  "type": "text",
+                  "uuid": "58ab86ab-378f-4f1c-bb88-f3c5c7fd0cb3",
+                  "description": "\"1\" => \"Direct Employer\",\"4\"=>\"Individual Professional\", \"2\" => \"Recruitment Agency/Executive Search Firm\",\"3\"=>\"Independent / Freelance Recruiter\""
+                },
+                {
+                  "key": "company_description",
+                  "value": "test desc",
+                  "type": "text",
+                  "uuid": "63619e7d-cbea-4c0d-83e3-90b0e3c2b7b6"
+                },
+                {
+                  "key": "employee_strength",
+                  "value": "2",
+                  "type": "text",
+                  "uuid": "1d2fd703-f6c9-4eab-809b-780476403ff6",
+                  "description": "\"1\" => \"0-1\",\"2\" => \"2-5\",\"3\" => \"6-10\",\"4\" => \"11-20\",\"5\" => \"21-30\",\"6\" => \"31-40\",\"7\" => \"41-50\",\"8\" => \"51-75\",\"9\" => \"76-100\",\"10\" => \"101-200\",\"11\" => \"201-500\",\"12\" => \"501-1000\",\"13\" => \"1001-5000\",\"14\" => \"5001-10000\",\"15\" => \"10000+\""
+                },
+                {
+                  "key": "country_id",
+                  "value": "101",
+                  "type": "text",
+                  "uuid": "8d915038-901d-45ce-8fed-25f0c9862675"
+                },
+                {
+                  "key": "city_id",
+                  "value": "995",
+                  "type": "text",
+                  "uuid": "6dcec7a9-e5c5-4664-9d5c-1c79afa8c197"
+                },
+                {
+                  "key": "state_id",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "06f49ede-1d35-4fd0-bc97-ab1ac56468b0"
+                },
+                {
+                  "key": "office_address",
+                  "value": "mumbaii",
+                  "type": "text",
+                  "uuid": "f2c5b2e5-fe09-4e5d-8f38-17dfb5149208"
+                },
+                {
+                  "key": "is_gst_registered",
+                  "value": "0",
+                  "type": "text",
+                  "uuid": "eb21e26e-29c6-46b9-b282-532ca64c1b96"
+                },
+                {
+                  "key": "gst_number",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "c45b14f5-ca66-423a-b3a5-d1bbbfd7d9ce"
+                },
+                {
+                  "key": "pan",
+                  "value": "ABCDE1234F",
+                  "type": "text",
+                  "uuid": "6405fd6a-6a50-43f0-a90a-1c7076cbc2c2"
+                },
+                {
+                  "key": "msme",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "7ea9397c-aa5c-46ae-8538-06e9775178ce"
+                },
+                {
+                  "key": "contact_person_name",
+                  "value": "xyz",
+                  "type": "text",
+                  "uuid": "39c09a76-510d-4867-be41-4545bf6670b6"
+                },
+                {
+                  "key": "contact_person_designation",
+                  "value": "tester",
+                  "type": "text",
+                  "uuid": "d1b9a4d2-59a8-43ca-bd61-f5ae36aa4eda"
+                },
+                {
+                  "key": "contact_person_country_code",
+                  "value": "91",
+                  "type": "text",
+                  "uuid": "60b4c762-18a8-4b1e-b8cc-e9f39fd2799c"
+                },
+                {
+                  "key": "contact_person_mobile",
+                  "value": "1111111111",
+                  "type": "text",
+                  "uuid": "60368d7f-04f9-40de-ae09-d8f3b99397c6"
+                },
+                {
+                  "key": "contact_person_email1",
+                  "value": "resume@hindco.com",
+                  "type": "text",
+                  "uuid": "9022b2c5-51d7-402d-8a36-84bd0b033f8c"
+                },
+                {
+                  "key": "industry_type[]",
+                  "value": "3",
+                  "type": "text",
+                  "uuid": "207acb25-dc0b-4e30-85e3-cc626fa45c9f"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://jobringer.com/api/employer_signup_api.php",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "employer_signup_api.php"
+              ]
+            },
+            "description": "## Purpose\n\nRegisters a new **Employer** account and company profile in Jobringer.\n\n## Endpoint\n\n**POST** `https://jobringer.com/api/employer_signup_api.php`\n\n## Content-Type\n\n`multipart/form-data`\n\n## Body (form-data)\n\nSend the following keys as **form-data** fields.\n\n### Required / commonly required fields (visible in this request)\n\n| Field | Type | Description | Example |\n| --- | --- | --- | --- |\n| `super_user_email` | string (email) | Email address for the employer super user (login). Must be a valid email format and typically must be unique. | `it.job11@jobtechventures.com` |\n| `company_name` | string | Company / employer display name. | `test company` |\n| `super_user_password` | string | Password for the super user. Must satisfy backend password rules (length/complexity). | `Str0nt!um` |\n| `company_url` | string (url) | Company website URL. | `http://www.hindco.com/` |\n| `employer_type` | number/string | Employer type identifier (backend enum/id). | `4` |\n| `company_description` | string | Short description of the company. | `test desc` |\n| `employee_strength` | number/string | Company size identifier (backend enum/id). | `2` |\n| `country_id` | number/string | Country identifier. | `101` |\n| `state_id` | number/string | State identifier. | `1` |\n| `city_id` | number/string | City identifier. | `995` |\n| `office_address` | string | Company office address. | `mumbaii` |\n\n### Additional fields\n\nThis request tab includes **additional form-data rows not shown here** (11 more rows in the current saved request). The backend may require additional fields depending on the employer type, location, or other validation rules.\n\n## Validation notes\n\n- Use a **unique** `super_user_email` when creating a new employer.\n    \n- `super_user_password` must meet backend password complexity/length requirements.\n    \n- IDs like `country_id`, `state_id`, `city_id`, `employer_type`, and `employee_strength` must match valid backend reference values.\n    \n- If validation fails, expect a non-201 response with `success` indicating failure and a `message` describing the error.\n    \n\n## Responses\n\n### Success — 201\n\nResponse body is JSON with the following shape:\n\n``` json\n{\n  \"success\": \"1\",\n  \"message\": \"Registration successful\",\n  \"data\": {\n    \"employer_id\": 54229,\n    \"company_name\": \"test company\",\n    \"email\": \"it.job11@jobtechventures.com\",\n    \"redirect_url\": \"https://jobringer.com/employer/post-a-jo...\"\n  }\n}\n\n ```\n\n#### Fields\n\n- `success` (string): Success flag. Observed as `\"1\"` on success.\n    \n- `message` (string): Human-readable status message.\n    \n- `data` (object): Registration result payload.\n    \n    - `employer_id` (number): Newly created employer identifier.\n        \n    - `company_name` (string)\n        \n    - `email` (string)\n        \n    - `redirect_url` (string): URL to continue onboarding / next step after registration.\n        \n\n---\n\n**Collection:** [Jobringer APIs](https://collection/50256664-73842bf5-15ec-4c8d-99de-fb6c24d845b5)  \n**Request:** [employer signup api](https://request/50256664-946a896d-9648-4bc7-a0b3-bbdb392198db)"
+          },
+          "response": []
+        },
+        {
+          "name": "employer update api",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "employer_id",
+                  "value": "50140",
+                  "type": "text",
+                  "uuid": "c62dddf7-a0aa-49e2-a352-eaa5f8103b55"
+                },
+                {
+                  "key": "company_name",
+                  "value": "company",
+                  "type": "text",
+                  "uuid": "5cad52d2-5c65-48af-94c1-8bc356e7b95c"
+                },
+                {
+                  "key": "company_url",
+                  "value": "http://www.resume.com/",
+                  "type": "text",
+                  "uuid": "f4dc8b3a-1eca-4a50-816e-28243fdd022c"
+                },
+                {
+                  "key": "employer_type",
+                  "value": "4",
+                  "type": "text",
+                  "description": "\"1\" => \"Direct Employer\",\"4\"=>\"Individual Professional\", \"2\" => \"Recruitment Agency/Executive Search Firm\",\"3\"=>\"Independent / Freelance Recruiter\"",
+                  "uuid": "58ab86ab-378f-4f1c-bb88-f3c5c7fd0cb3"
+                },
+                {
+                  "key": "company_type",
+                  "value": "1",
+                  "type": "text",
+                  "description": "1=Indian Co,, 2=Indian MNC, 3=Foreign MNC"
+                },
+                {
+                  "key": "company_description",
+                  "value": "test desc",
+                  "type": "text",
+                  "uuid": "63619e7d-cbea-4c0d-83e3-90b0e3c2b7b6"
+                },
+                {
+                  "key": "employee_strength",
+                  "value": "2",
+                  "type": "text",
+                  "description": "\"1\" => \"0-1\",\"2\" => \"2-5\",\"3\" => \"6-10\",\"4\" => \"11-20\",\"5\" => \"21-30\",\"6\" => \"31-40\",\"7\" => \"41-50\",\"8\" => \"51-75\",\"9\" => \"76-100\",\"10\" => \"101-200\",\"11\" => \"201-500\",\"12\" => \"501-1000\",\"13\" => \"1001-5000\",\"14\" => \"5001-10000\",\"15\" => \"10000+\"",
+                  "uuid": "1d2fd703-f6c9-4eab-809b-780476403ff6"
+                },
+                {
+                  "key": "country_id",
+                  "value": "101",
+                  "type": "text",
+                  "uuid": "8d915038-901d-45ce-8fed-25f0c9862675"
+                },
+                {
+                  "key": "city_id",
+                  "value": "995",
+                  "type": "text",
+                  "uuid": "6dcec7a9-e5c5-4664-9d5c-1c79afa8c197"
+                },
+                {
+                  "key": "state_id",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "06f49ede-1d35-4fd0-bc97-ab1ac56468b0"
+                },
+                {
+                  "key": "office_address",
+                  "value": "churchgate,mumbaii",
+                  "type": "text",
+                  "uuid": "f2c5b2e5-fe09-4e5d-8f38-17dfb5149208"
+                },
+                {
+                  "key": "pincode",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "is_gst_registered",
+                  "value": "0",
+                  "type": "text",
+                  "description": "0=>false,1=>true",
+                  "uuid": "eb21e26e-29c6-46b9-b282-532ca64c1b96"
+                },
+                {
+                  "key": "gst_number",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "c45b14f5-ca66-423a-b3a5-d1bbbfd7d9ce",
+                  "disabled": true
+                },
+                {
+                  "key": "pan",
+                  "value": "ABCDE1234F",
+                  "type": "text",
+                  "uuid": "6405fd6a-6a50-43f0-a90a-1c7076cbc2c2"
+                },
+                {
+                  "key": "msme",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "7ea9397c-aa5c-46ae-8538-06e9775178ce",
+                  "disabled": true
+                },
+                {
+                  "key": "contact_person_name",
+                  "value": "xyz",
+                  "type": "text",
+                  "uuid": "39c09a76-510d-4867-be41-4545bf6670b6"
+                },
+                {
+                  "key": "contact_person_designation",
+                  "value": "tester",
+                  "type": "text",
+                  "uuid": "d1b9a4d2-59a8-43ca-bd61-f5ae36aa4eda"
+                },
+                {
+                  "key": "contact_person_country_code",
+                  "value": "91",
+                  "type": "text",
+                  "uuid": "60b4c762-18a8-4b1e-b8cc-e9f39fd2799c"
+                },
+                {
+                  "key": "contact_person_mobile",
+                  "value": "1111111111",
+                  "type": "text",
+                  "uuid": "60368d7f-04f9-40de-ae09-d8f3b99397c6"
+                },
+                {
+                  "key": "contact_person_email1",
+                  "value": "resume@hindco.com",
+                  "type": "text",
+                  "uuid": "9022b2c5-51d7-402d-8a36-84bd0b033f8c"
+                },
+                {
+                  "key": "industry_type[]",
+                  "value": "3",
+                  "type": "text",
+                  "uuid": "207acb25-dc0b-4e30-85e3-cc626fa45c9f"
+                },
+                {
+                  "key": "business_house",
+                  "value": "",
+                  "type": "text",
+                  "description": "//if company is owned by other company",
+                  "uuid": "ad26fe35-96ed-421e-a881-ae32df022eec",
+                  "disabled": true
+                },
+                {
+                  "key": "products",
+                  "value": "",
+                  "type": "text",
+                  "description": "//products by employer/ company",
+                  "uuid": "33221736-7928-4d03-b381-9629cb4604a8",
+                  "disabled": true
+                },
+                {
+                  "key": "brands",
+                  "value": "",
+                  "type": "text",
+                  "description": "//brands owned by company",
+                  "uuid": "284a1483-0192-4302-850e-b26d7218b08a",
+                  "disabled": true
+                },
+                {
+                  "key": "operations",
+                  "value": "",
+                  "type": "text",
+                  "description": "1=Pan India, 2=International, 3=Global",
+                  "uuid": "48c7f544-8287-4dec-ae4e-b52e3f9bddf7",
+                  "disabled": true
+                },
+                {
+                  "key": "business_turnover",
+                  "value": "",
+                  "type": "text",
+                  "description": "// annual business turnover",
+                  "uuid": "e3a8e9bd-5f18-4868-abac-250f2b4350bd",
+                  "disabled": true
+                },
+                {
+                  "key": "company_registration_type",
+                  "value": "",
+                  "type": "text",
+                  "description": "1=Public Ltd. Co., 2=Pvt. Ltd. Co., 3=Proprietorship, 4=Partnership Firm, 5=HUF, 6=Non Proffit Organization, 7=LLP, 8=OPC",
+                  "uuid": "1534bbf3-924a-4fc2-98b2-ccbb3c4c52e6",
+                  "disabled": true
+                },
+                {
+                  "key": "enterprises_categorization",
+                  "value": "",
+                  "type": "text",
+                  "description": "1=Micro, 2=Small, 3=Medium, 4=Large, 5=Others",
+                  "uuid": "9b982771-08f4-4865-9b4c-e8b501f9ab3b",
+                  "disabled": true
+                },
+                {
+                  "key": "office_type",
+                  "value": "",
+                  "type": "text",
+                  "description": "1=Head Office, 2=Branch Office, 3=Other",
+                  "uuid": "deaef04a-e760-4f7f-aca8-aa81e024a01f",
+                  "disabled": true
+                },
+                {
+                  "key": "company_name_as_per_gst_pan",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "a9adde35-3232-419f-9164-c9d0c5361337",
+                  "disabled": true
+                },
+                {
+                  "key": "linkedin_link",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "0ce086d7-dc11-4fff-a0a2-1179ae61b092",
+                  "disabled": true
+                },
+                {
+                  "key": "twitter_link",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "60d2ea53-66c9-4f23-8d79-40f75a19ff08",
+                  "disabled": true
+                },
+                {
+                  "key": "facebook_link",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "103b6e68-2903-43b1-a534-51dd8e203e52",
+                  "disabled": true
+                },
+                {
+                  "key": "instagram_link",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "58584a5b-fa28-443e-b2fa-ffd1852f33bc",
+                  "disabled": true
+                },
+                {
+                  "key": "youtube_link",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "8193a2d3-4d09-4816-8a89-c4b9ea4d3511",
+                  "disabled": true
+                },
+                {
+                  "key": "others_link",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "2b4590d3-8166-4615-9c6a-7246c81190bd",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://jobringer.com/api/employer_update_api.php",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "employer_update_api.php"
+              ]
+            },
+            "description": "Updates the profile information of an existing employer. Send only the fields you want to update along with the required `employer_id`. All other fields are optional — only the provided fields will be modified.\n\n**Method:** POST  \n**URL:** `https://jobringer.com/api/employer_update_api.php`  \n**Content-Type:** `multipart/form-data`\n\n---\n\n## Request Body\n\n| Parameter | Type | Required | Description |\n| --- | --- | --- | --- |\n| `employer_id` | integer | **Required** | Unique ID of the employer to update |\n| `company_name` | string | Optional | Company name |\n| `company_url` | string | Optional | Company website URL |\n| `employer_type` | integer | Optional | `1` = Direct Employer, `2` = Recruitment Agency/Executive Search Firm, `3` = Independent / Freelance Recruiter, `4` = Individual Professional |\n| `company_type` | integer | Optional | `1` = Indian Co., `2` = Indian MNC, `3` = Foreign MNC |\n| `company_description` | string | Optional | Brief description of the company |\n| `employee_strength` | integer | Optional | `1`\\=0-1, `2`\\=2-5, `3`\\=6-10, `4`\\=11-20, `5`\\=21-30, `6`\\=31-40, `7`\\=41-50, `8`\\=51-75, `9`\\=76-100, `10`\\=101-200, `11`\\=201-500, `12`\\=501-1000, `13`\\=1001-5000, `14`\\=5001-10000, `15`\\=10000+ |\n| `country_id` | integer | Optional | Country ID |\n| `state_id` | integer | Optional | State ID |\n| `city_id` | integer | Optional | City ID |\n| `office_address` | string | Optional | Office address |\n| `pincode` | string | Optional | Postal/ZIP code |\n| `is_gst_registered` | integer | Optional | `0` = false, `1` = true |\n| `gst_number` | string | Optional | GST registration number |\n| `pan` | string | Optional | PAN number (e.g. `ABCDE1234F`) |\n| `msme` | string | Optional | MSME registration number |\n| `contact_person_name` | string | Optional | Name of the contact person |\n| `contact_person_designation` | string | Optional | Designation of the contact person |\n| `contact_person_country_code` | string | Optional | Country code for contact person's mobile (e.g. `91`) |\n| `contact_person_mobile` | string | Optional | Contact person's mobile number |\n| `contact_person_email1` | string | Optional | Contact person's email address |\n| `industry_type[]` | integer | Optional | Industry type ID (array field — send multiple times for multiple industries) |\n| `business_house` | string | Optional | Parent company name, if the company is owned by another company |\n| `products` | string | Optional | Products offered by the employer/company |\n| `brands` | string | Optional | Brands owned by the company |\n| `operations` | integer | Optional | `1` = Pan India, `2` = International, `3` = Global |\n| `business_turnover` | string | Optional | Annual business turnover |\n| `company_registration_type` | integer | Optional | `1`\\=Public Ltd. Co., `2`\\=Pvt. Ltd. Co., `3`\\=Proprietorship, `4`\\=Partnership Firm, `5`\\=HUF, `6`\\=Non Profit Organization, `7`\\=LLP, `8`\\=OPC |\n| `enterprises_categorization` | integer | Optional | `1`\\=Micro, `2`\\=Small, `3`\\=Medium, `4`\\=Large, `5`\\=Others |\n| `office_type` | integer | Optional | `1`\\=Head Office, `2`\\=Branch Office, `3`\\=Other |\n| `company_name_as_per_gst_pan` | string | Optional | Company name as it appears on GST/PAN documents |\n| `linkedin_link` | string | Optional | LinkedIn profile URL |\n| `twitter_link` | string | Optional | Twitter profile URL |\n| `facebook_link` | string | Optional | Facebook page URL |\n| `instagram_link` | string | Optional | Instagram profile URL |\n| `youtube_link` | string | Optional | YouTube channel URL |\n| `others_link` | string | Optional | Any other relevant URL |\n\n---\n\n## Notes\n\n- `industry_type[]` is an array field and can be sent multiple times in the same request to associate the employer with multiple industries.\n    \n- Only `employer_id` is required; all other fields are optional. Only the fields included in the request will be updated — omitted fields remain unchanged."
+          },
+          "response": []
+        },
+        {
+          "name": "jobseeker listing api",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "keywords",
+                  "value": "Engineer",
+                  "description": "//text",
+                  "type": "text",
+                  "uuid": "e3c6f657-bcda-4661-b18e-513a48190eab"
+                },
+                {
+                  "key": "industry",
+                  "value": "164",
+                  "type": "text",
+                  "uuid": "feefa407-7b25-4121-9a4e-183063486817"
+                },
+                {
+                  "key": "functional_area",
+                  "value": "3",
+                  "type": "text",
+                  "uuid": "f15faa22-9ddf-44e9-990a-fb6c0d0bc2ee"
+                },
+                {
+                  "key": "city_id",
+                  "value": "64",
+                  "type": "text",
+                  "uuid": "76e40aac-f5ca-4c4c-aa8c-3b02e9332782"
+                },
+                {
+                  "key": "experience_from",
+                  "value": "3",
+                  "type": "text",
+                  "uuid": "d9705911-d35c-4c2a-a60a-cd3e642ac1eb"
+                },
+                {
+                  "key": "experience_to",
+                  "value": "6",
+                  "type": "text",
+                  "uuid": "da124020-1be8-422a-8946-c14d7479d7fc"
+                },
+                {
+                  "key": "page",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "4171b402-3cae-4e39-8c12-b60834c8825e"
+                },
+                {
+                  "key": "limit",
+                  "value": "20",
+                  "type": "text",
+                  "uuid": "e2d3af55-9f37-495e-a078-d961a38273ca"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://jobringer.com/api/jobseeker_listing_api.php",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "jobseeker_listing_api.php"
+              ]
+            },
+            "description": "## Purpose\n\nSearch and retrieve a list of jobseekers filtered by keyword and optional criteria such as role, industry, functional area, city, and experience range.\n\n## Endpoint\n\n`POST https://jobringer.com/api/jobseeker_listing_api.php`\n\n## Request body\n\nContent-Type: `multipart/form-data`\n\n### Form-data fields\n\n**Required**\n\n- `keywords` _(string)_: Search text (e.g., profile keywords, title). Example: `sales manager`.\n    \n\n**Optional**\n\n- `job_role` _(string)_: Filter by job role identifier/name (API-specific).\n    \n- `industry` _(string)_: Filter by industry identifier/name (API-specific).\n    \n- `functional_area` _(string)_: Filter by functional area identifier/name (API-specific).\n    \n- `city_id` _(string|number)_: Filter by city identifier.\n    \n- `experience_from` _(number|string)_: Minimum experience (years).\n    \n- `experience_to` _(number|string)_: Maximum experience (years).\n    \n\n**Data for BasicSearch -**\n\n- `keywords` _(string)_: Search text (e.g., profile keywords, title). Example: `sales manager`.\n    \n- `experience_from` _(number|string)_: Minimum experience (years).\n    \n- `experience_to` _(number|string)_: Maximum experience (years).\n    \n\n**Data for AdvanceSearch -**\n\n- `job_role` _(string)_: Filter by job role identifier/name (API-specific).\n    \n- `keywords` _(string)_: Search text (e.g., profile keywords, title). Example: `sales manager`.\n    \n- `industry` _(string)_: Filter by industry identifier/name (API-specific).\n    \n- `functional_area` _(string)_: Filter by functional area identifier/name (API-specific).\n    \n- `city_id` _(string|number)_: Filter by city identifier.\n    \n- `experience_from` _(number|string)_: Minimum experience (years).\n    \n- `experience_to` _(number|string)_: Maximum experience (years).\n    \n- `resumeCheck` _(number|boolean)_: only retrieve j/s with resume if value is 1(use checkbox).\n    \n- `salary_from` _(number|string)_: Minimum salary.\n    \n- `salary_to` _(number|string)_: Maximum salary.\n    \n\n### Example form-data payload\n\n``` text\nkeywords=sales manager\njob_role=\nindustry=\nfunctional_area=\ncity_id=\nexperience_from=3\nexperience_to=6\n\n ```\n\n## Response (200 OK)\n\nReturns a JSON array of jobseeker objects.\n\n### Response summary (based on last successful response)\n\nEach array item includes fields similar to:\n\n- `id` _(string)_: Jobseeker ID\n    \n- `name` _(string)_\n    \n- `profile_title` _(string)_\n    \n- `keywords` _(string)_\n    \n- `bookmarked` _(boolean)_\n    \n- `viewed` _(string|number)_: View count/flag (returned as string in sample)\n    \n- `status_active` _(boolean)_\n    \n- `featured_resume` _(boolean)_\n    \n- `contact1` _(string)_: Primary phone\n    \n- `contact2` _(string)_: Secondary phone (may be empty)\n    \n- `wappno` _(string)_: WhatsApp number\n    \n\n## Notes\n\n- **Filtering behavior**: Empty/blank optional fields appear to be treated as “no filter” (inferred from request structure). Exact matching rules (partial vs exact, case sensitivity) are **unknown**.\n    \n- **Pagination**: Not observed in the request/response (no `page`, `limit`, `offset`, etc.). Pagination support is **unknown / not documented** for this endpoint."
+          },
+          "response": []
+        },
+        {
+          "name": "jobseeker listing api Copy",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "keywords",
+                  "value": "Engineer",
+                  "description": "//text",
+                  "type": "text",
+                  "uuid": "e3c6f657-bcda-4661-b18e-513a48190eab",
+                  "disabled": true
+                },
+                {
+                  "key": "industry",
+                  "value": "164",
+                  "type": "text",
+                  "uuid": "feefa407-7b25-4121-9a4e-183063486817",
+                  "disabled": true
+                },
+                {
+                  "key": "functional_area",
+                  "value": "3",
+                  "type": "text",
+                  "uuid": "f15faa22-9ddf-44e9-990a-fb6c0d0bc2ee",
+                  "disabled": true
+                },
+                {
+                  "key": "city_id",
+                  "value": "64",
+                  "type": "text",
+                  "uuid": "76e40aac-f5ca-4c4c-aa8c-3b02e9332782",
+                  "disabled": true
+                },
+                {
+                  "key": "experience_from",
+                  "value": "3",
+                  "type": "text",
+                  "uuid": "d9705911-d35c-4c2a-a60a-cd3e642ac1eb",
+                  "disabled": true
+                },
+                {
+                  "key": "experience_to",
+                  "value": "6",
+                  "type": "text",
+                  "uuid": "da124020-1be8-422a-8946-c14d7479d7fc",
+                  "disabled": true
+                },
+                {
+                  "key": "page",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "4171b402-3cae-4e39-8c12-b60834c8825e",
+                  "disabled": true
+                },
+                {
+                  "key": "limit",
+                  "value": "100",
+                  "type": "text",
+                  "uuid": "e2d3af55-9f37-495e-a078-d961a38273ca",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "local.jobringer.com/api/jobseeker_list_api.php",
+              "host": [
+                "local",
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "jobseeker_list_api.php"
+              ]
+            },
+            "description": "## Purpose\n\nSearch and retrieve a list of jobseekers filtered by keyword and optional criteria such as role, industry, functional area, city, and experience range.\n\n## Endpoint\n\n`POST https://jobringer.com/api/jobseeker_listing_api.php`\n\n## Request body\n\nContent-Type: `multipart/form-data`\n\n### Form-data fields\n\n**Required**\n\n- `keywords` _(string)_: Search text (e.g., profile keywords, title). Example: `sales manager`.\n    \n\n**Optional**\n\n- `job_role` _(string)_: Filter by job role identifier/name (API-specific).\n    \n- `industry` _(string)_: Filter by industry identifier/name (API-specific).\n    \n- `functional_area` _(string)_: Filter by functional area identifier/name (API-specific).\n    \n- `city_id` _(string|number)_: Filter by city identifier.\n    \n- `experience_from` _(number|string)_: Minimum experience (years).\n    \n- `experience_to` _(number|string)_: Maximum experience (years).\n    \n\n**Data for BasicSearch -**\n\n- `keywords` _(string)_: Search text (e.g., profile keywords, title). Example: `sales manager`.\n    \n- `experience_from` _(number|string)_: Minimum experience (years).\n    \n- `experience_to` _(number|string)_: Maximum experience (years).\n    \n\n**Data for AdvanceSearch -**\n\n- `job_role` _(string)_: Filter by job role identifier/name (API-specific).\n    \n- `keywords` _(string)_: Search text (e.g., profile keywords, title). Example: `sales manager`.\n    \n- `industry` _(string)_: Filter by industry identifier/name (API-specific).\n    \n- `functional_area` _(string)_: Filter by functional area identifier/name (API-specific).\n    \n- `city_id` _(string|number)_: Filter by city identifier.\n    \n- `experience_from` _(number|string)_: Minimum experience (years).\n    \n- `experience_to` _(number|string)_: Maximum experience (years).\n    \n- `resumeCheck` _(number|boolean)_: only retrieve j/s with resume if value is 1(use checkbox).\n    \n- `salary_from` _(number|string)_: Minimum salary.\n    \n- `salary_to` _(number|string)_: Maximum salary.\n    \n\n### Example form-data payload\n\n``` text\nkeywords=sales manager\njob_role=\nindustry=\nfunctional_area=\ncity_id=\nexperience_from=3\nexperience_to=6\n\n ```\n\n## Response (200 OK)\n\nReturns a JSON array of jobseeker objects.\n\n### Response summary (based on last successful response)\n\nEach array item includes fields similar to:\n\n- `id` _(string)_: Jobseeker ID\n    \n- `name` _(string)_\n    \n- `profile_title` _(string)_\n    \n- `keywords` _(string)_\n    \n- `bookmarked` _(boolean)_\n    \n- `viewed` _(string|number)_: View count/flag (returned as string in sample)\n    \n- `status_active` _(boolean)_\n    \n- `featured_resume` _(boolean)_\n    \n- `contact1` _(string)_: Primary phone\n    \n- `contact2` _(string)_: Secondary phone (may be empty)\n    \n- `wappno` _(string)_: WhatsApp number\n    \n\n## Notes\n\n- **Filtering behavior**: Empty/blank optional fields appear to be treated as “no filter” (inferred from request structure). Exact matching rules (partial vs exact, case sensitivity) are **unknown**.\n    \n- **Pagination**: Not observed in the request/response (no `page`, `limit`, `offset`, etc.). Pagination support is **unknown / not documented** for this endpoint."
+          },
+          "response": []
+        },
+        {
+          "name": "jobseeker detail api",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "jobseeker_id",
+                  "value": "257259",
+                  "type": "text",
+                  "uuid": "e2d3af55-9f37-495e-a078-d961a38273ca"
+                }
+              ]
+            },
+            "url": {
+              "raw": "local.jobringer.com/api/jobseeker_details_api.php",
+              "host": [
+                "local",
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "jobseeker_details_api.php"
+              ]
+            },
+            "description": "## Purpose\n\nSearch and retrieve a list of jobseekers filtered by keyword and optional criteria such as role, industry, functional area, city, and experience range.\n\n## Endpoint\n\n`POST https://jobringer.com/api/jobseeker_listing_api.php`\n\n## Request body\n\nContent-Type: `multipart/form-data`\n\n### Form-data fields\n\n**Required**\n\n- `keywords` _(string)_: Search text (e.g., profile keywords, title). Example: `sales manager`.\n    \n\n**Optional**\n\n- `job_role` _(string)_: Filter by job role identifier/name (API-specific).\n    \n- `industry` _(string)_: Filter by industry identifier/name (API-specific).\n    \n- `functional_area` _(string)_: Filter by functional area identifier/name (API-specific).\n    \n- `city_id` _(string|number)_: Filter by city identifier.\n    \n- `experience_from` _(number|string)_: Minimum experience (years).\n    \n- `experience_to` _(number|string)_: Maximum experience (years).\n    \n\n**Data for BasicSearch -**\n\n- `keywords` _(string)_: Search text (e.g., profile keywords, title). Example: `sales manager`.\n    \n- `experience_from` _(number|string)_: Minimum experience (years).\n    \n- `experience_to` _(number|string)_: Maximum experience (years).\n    \n\n**Data for AdvanceSearch -**\n\n- `job_role` _(string)_: Filter by job role identifier/name (API-specific).\n    \n- `keywords` _(string)_: Search text (e.g., profile keywords, title). Example: `sales manager`.\n    \n- `industry` _(string)_: Filter by industry identifier/name (API-specific).\n    \n- `functional_area` _(string)_: Filter by functional area identifier/name (API-specific).\n    \n- `city_id` _(string|number)_: Filter by city identifier.\n    \n- `experience_from` _(number|string)_: Minimum experience (years).\n    \n- `experience_to` _(number|string)_: Maximum experience (years).\n    \n- `resumeCheck` _(number|boolean)_: only retrieve j/s with resume if value is 1(use checkbox).\n    \n- `salary_from` _(number|string)_: Minimum salary.\n    \n- `salary_to` _(number|string)_: Maximum salary.\n    \n\n### Example form-data payload\n\n``` text\nkeywords=sales manager\njob_role=\nindustry=\nfunctional_area=\ncity_id=\nexperience_from=3\nexperience_to=6\n\n ```\n\n## Response (200 OK)\n\nReturns a JSON array of jobseeker objects.\n\n### Response summary (based on last successful response)\n\nEach array item includes fields similar to:\n\n- `id` _(string)_: Jobseeker ID\n    \n- `name` _(string)_\n    \n- `profile_title` _(string)_\n    \n- `keywords` _(string)_\n    \n- `bookmarked` _(boolean)_\n    \n- `viewed` _(string|number)_: View count/flag (returned as string in sample)\n    \n- `status_active` _(boolean)_\n    \n- `featured_resume` _(boolean)_\n    \n- `contact1` _(string)_: Primary phone\n    \n- `contact2` _(string)_: Secondary phone (may be empty)\n    \n- `wappno` _(string)_: WhatsApp number\n    \n\n## Notes\n\n- **Filtering behavior**: Empty/blank optional fields appear to be treated as “no filter” (inferred from request structure). Exact matching rules (partial vs exact, case sensitivity) are **unknown**.\n    \n- **Pagination**: Not observed in the request/response (no `page`, `limit`, `offset`, etc.). Pagination support is **unknown / not documented** for this endpoint."
+          },
+          "response": []
+        },
+        {
+          "name": "jobseeker featured listing api",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "limit",
+                  "value": "10",
+                  "type": "text",
+                  "uuid": "5e610dbf-fcff-4541-b9a8-dec3a7abd29f"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://jobringer.com/api/jobseeker_featured_listing_api.php",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "jobseeker_featured_listing_api.php"
+              ]
+            },
+            "description": "## Purpose\n\nSearch and retrieve a list of jobseekers filtered by keyword and optional criteria such as role, industry, functional area, city, and experience range.\n\n## Endpoint\n\n`POST https://jobringer.com/api/jobseeker_listing_api.php`\n\n## Request body\n\nContent-Type: `multipart/form-data`\n\n### Form-data fields\n\n**Required**\n\n- `keywords` _(string)_: Search text (e.g., profile keywords, title). Example: `sales manager`.\n    \n\n**Optional**\n\n- `job_role` _(string)_: Filter by job role identifier/name (API-specific).\n    \n- `industry` _(string)_: Filter by industry identifier/name (API-specific).\n    \n- `functional_area` _(string)_: Filter by functional area identifier/name (API-specific).\n    \n- `city_id` _(string|number)_: Filter by city identifier.\n    \n- `experience_from` _(number|string)_: Minimum experience (years).\n    \n- `experience_to` _(number|string)_: Maximum experience (years).\n    \n\n**Data for BasicSearch -**\n\n- `keywords` _(string)_: Search text (e.g., profile keywords, title). Example: `sales manager`.\n    \n- `experience_from` _(number|string)_: Minimum experience (years).\n    \n- `experience_to` _(number|string)_: Maximum experience (years).\n    \n\n**Data for AdvanceSearch -**\n\n- `job_role` _(string)_: Filter by job role identifier/name (API-specific).\n    \n- `keywords` _(string)_: Search text (e.g., profile keywords, title). Example: `sales manager`.\n    \n- `industry` _(string)_: Filter by industry identifier/name (API-specific).\n    \n- `functional_area` _(string)_: Filter by functional area identifier/name (API-specific).\n    \n- `city_id` _(string|number)_: Filter by city identifier.\n    \n- `experience_from` _(number|string)_: Minimum experience (years).\n    \n- `experience_to` _(number|string)_: Maximum experience (years).\n    \n- `resumeCheck` _(number|boolean)_: only retrieve j/s with resume if value is 1(use checkbox).\n    \n- `salary_from` _(number|string)_: Minimum salary.\n    \n- `salary_to` _(number|string)_: Maximum salary.\n    \n\n### Example form-data payload\n\n``` text\nkeywords=sales manager\njob_role=\nindustry=\nfunctional_area=\ncity_id=\nexperience_from=3\nexperience_to=6\n\n ```\n\n## Response (200 OK)\n\nReturns a JSON array of jobseeker objects.\n\n### Response summary (based on last successful response)\n\nEach array item includes fields similar to:\n\n- `id` _(string)_: Jobseeker ID\n    \n- `name` _(string)_\n    \n- `profile_title` _(string)_\n    \n- `keywords` _(string)_\n    \n- `bookmarked` _(boolean)_\n    \n- `viewed` _(string|number)_: View count/flag (returned as string in sample)\n    \n- `status_active` _(boolean)_\n    \n- `featured_resume` _(boolean)_\n    \n- `contact1` _(string)_: Primary phone\n    \n- `contact2` _(string)_: Secondary phone (may be empty)\n    \n- `wappno` _(string)_: WhatsApp number\n    \n\n## Notes\n\n- **Filtering behavior**: Empty/blank optional fields appear to be treated as “no filter” (inferred from request structure). Exact matching rules (partial vs exact, case sensitivity) are **unknown**.\n    \n- **Pagination**: Not observed in the request/response (no `page`, `limit`, `offset`, etc.). Pagination support is **unknown / not documented** for this endpoint."
+          },
+          "response": []
+        },
+        {
+          "name": "employer manage jobs list",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "employer_id",
+                  "value": "84",
+                  "type": "text",
+                  "uuid": "e3c6f657-bcda-4661-b18e-513a48190eab"
+                },
+                {
+                  "key": "search",
+                  "value": "sales",
+                  "description": "//for searching specific job non compulsory",
+                  "type": "text",
+                  "uuid": "f6959888-f7ea-455a-948d-912d068b5370",
+                  "disabled": true
+                },
+                {
+                  "key": "page",
+                  "value": "1",
+                  "description": "//for pagination",
+                  "type": "text",
+                  "uuid": "dd2a47ab-1f2e-416a-af21-67773743c10c"
+                },
+                {
+                  "key": "limit",
+                  "value": "20",
+                  "description": "//for pagination",
+                  "type": "text",
+                  "uuid": "aca6b9c7-8d37-4b31-bf43-2b9468c027d0"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://jobringer.com/api/job_list_employer_api.php?",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "job_list_employer_api.php"
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": null
+                }
+              ]
+            },
+            "description": "## Job list (Employer)\n\nReturns a paginated list of jobs for a given employer, optionally filtered by a search term.\n\n**Method:** `POST`  \n**URL:** `https://jobringer.com/api/job_list_employer_api.php`\n\n---\n\n## Request body (multipart/form-data)\n\nSend the following fields as **form-data**:\n\n| Field | Type | Required | Description |\n| --- | --- | --- | --- |\n| `employer_id` | string/number | Yes | Employer identifier whose jobs should be returned. Example: `84`. |\n| `search` | string | No | Free-text filter applied to the job list (commonly matches job title and/or related fields). Example: `sales`. Use an empty value to fetch without filtering. |\n| `page` | number | No | Page number (1-based). Default is typically `1` if omitted. Example: `1`, `2`, `3`. |\n| `limit` | number | No | Number of records per page. Example: `20`. |\n\n### Pagination behavior\n\n- **`page`** **is 1-based**: `page=1` returns the first set of results.\n    \n- Use `limit` to control page size.\n    \n- Increment `page` (`1 → 2 → 3 ...`) to fetch subsequent pages.\n    \n- When there are no more results, the API commonly returns an empty JSON array (`[]`).\n    \n\n---\n\n## Response\n\n### `200 OK`\n\nReturns a **JSON array** of job objects.\n\nTypical job fields include:\n\n- `id`, `permalink`, `title`\n    \n- status flags: `active`, `featured`, `deleted`, `published`, `drafted`, `expired`\n    \n- timestamps: `created`, `expiry_date`\n    \n- employer/job metadata: `posted_by`, `company`, `employer_id`\n    \n- counts/links: `applied_count`, `view_count`, `candidate_list`\n    \n\n> Note: Some fields may be `null` (e.g., `view_count`) depending on the record. \n  \n\n---\n\n## Quick example\n\n### Example request (form-data)\n\n``` text\nPOST https://jobringer.com/api/job_list_employer_api.php\nform-data:\n  employer_id: 84\n  search: sales\n  page: 1\n  limit: 20\n\n ```\n\n### Example response (truncated)\n\n``` json\n[\n  {\n    \"id\": \"57964\",\n    \"permalink\": \"6af59832\",\n    \"title\": \"Field Diabetes Educator | South India | ...\",\n    \"active\": \"Yes\",\n    \"featured\": \"0\",\n    \"deleted\": \"0\",\n    \"published\": \"1\",\n    \"drafted\": \"0\",\n    \"expired\": \"0\",\n    \"created\": \"2026-02-16 16:14:17\",\n    \"expiry_date\": \"2026-05-17\",\n    \"posted_by\": \"kaustubh\",\n    \"company\": \"HINDCO Consulting Services\",\n    \"employer_id\": \"84\",\n    \"applied_count\": \"3\",\n    \"view_count\": null,\n    \"candidate_list\": \"https://jobringer.com/candidate-list/6af...\"\n  }\n]\n\n ```"
+          },
+          "response": []
+        },
+        {
+          "name": "Job Post API",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "title",
+                  "value": "test",
+                  "type": "text",
+                  "uuid": "915eb83b-93bb-4b7b-a1c5-6abf77b8c974"
+                },
+                {
+                  "key": "is_featured",
+                  "value": "0",
+                  "type": "text",
+                  "uuid": "e75ad2be-56da-4f21-a6bb-46a7aa8ca893"
+                },
+                {
+                  "key": "work_mode",
+                  "value": "5",
+                  "type": "text",
+                  "uuid": "9808ea5c-115e-4c2b-a252-4e84590866fa"
+                },
+                {
+                  "key": "employment_major",
+                  "value": "5",
+                  "type": "text",
+                  "uuid": "1e648e4b-f9d6-4f40-92f7-ee5b002033fb"
+                },
+                {
+                  "key": "employment_minor",
+                  "value": "2",
+                  "type": "text",
+                  "uuid": "cc2d83ee-86d8-48e5-b421-ae4b1f283e0a"
+                },
+                {
+                  "key": "description",
+                  "value": "saeft",
+                  "type": "text",
+                  "uuid": "eb3c18a0-cf21-4ec0-9a12-ab2b5c8bf0b1"
+                },
+                {
+                  "key": "hiring_for",
+                  "value": "derr",
+                  "type": "text",
+                  "uuid": "6b2c212e-d52e-424d-b00a-a519131f7c11"
+                },
+                {
+                  "key": "job_keywords",
+                  "value": "asf",
+                  "type": "text",
+                  "uuid": "c9bc63a4-fe81-4712-9f4a-f7d586c15839"
+                },
+                {
+                  "key": "country_id[]",
+                  "value": "101",
+                  "type": "text",
+                  "uuid": "9c6c5893-e891-46bd-9a4d-15c5a43dc755"
+                },
+                {
+                  "key": "city_id[]",
+                  "value": "995",
+                  "type": "text",
+                  "uuid": "668b3d74-7e12-429b-9d9f-1cad0f421ff3"
+                },
+                {
+                  "key": "is_hide_salary_details",
+                  "value": "0",
+                  "type": "text",
+                  "uuid": "0bc11ec4-2277-43f6-956b-3472e0f180cf",
+                  "description": "0-dont hide ,1- hide"
+                },
+                {
+                  "key": "industry_type[]",
+                  "value": "3",
+                  "type": "text",
+                  "uuid": "4b52f737-6114-4060-9540-dfcc6d7c780e"
+                },
+                {
+                  "key": "functional_area[]",
+                  "value": "2",
+                  "type": "text",
+                  "uuid": "34d02a8d-c2da-4cc3-a3b8-0df851373bc8"
+                },
+                {
+                  "key": "job_role[]",
+                  "value": "4",
+                  "type": "text",
+                  "uuid": "8994d16e-704f-452a-8616-8bb01b0f566a"
+                },
+                {
+                  "key": "min_exp",
+                  "value": "2",
+                  "type": "text",
+                  "uuid": "803e2031-1e5e-4c7e-b1e5-193c6b989b47"
+                },
+                {
+                  "key": "max_exp",
+                  "value": "6",
+                  "type": "text",
+                  "uuid": "a4697db8-20a5-4d5f-b2c0-dbf5c0fba448"
+                },
+                {
+                  "key": "gender_preference",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "0781397f-dd05-4b27-a2d0-1a901bf1cdbd",
+                  "description": "\"1\"=>\"Any\",\"2\"=>\"Male\",\"3\"=>\"Female\",\"4\"=>\"Other\""
+                },
+                {
+                  "key": "candidate_preference[]",
+                  "value": "2",
+                  "type": "text",
+                  "uuid": "afd87ea7-3150-44a8-a9cf-9c55e6e6dc16"
+                },
+                {
+                  "key": "ctc_currency",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "17a8cb20-4f12-408f-82d0-e531483bb46f",
+                  "description": "\"1\" => \"₹ INR\", \"2\" => \"$ Dollar\""
+                },
+                {
+                  "key": "min_ctc",
+                  "value": "10000",
+                  "type": "text",
+                  "uuid": "f3ede060-6436-4835-a021-ac96ff5ebc0d"
+                },
+                {
+                  "key": "max_ctc",
+                  "value": "20000",
+                  "type": "text",
+                  "uuid": "8778c6a5-f8e8-4d95-abd1-e6a0b9f90c42"
+                },
+                {
+                  "key": "ctc_duration",
+                  "value": "per_annum",
+                  "type": "text",
+                  "uuid": "09fcb0b0-2bd7-4ea6-9575-8cb9354f71fd"
+                },
+                {
+                  "key": "employer_id",
+                  "value": "54394",
+                  "type": "text",
+                  "uuid": "7a51fbc2-f290-4f1e-b21c-0a2f3c2bf83e"
+                },
+                {
+                  "key": "posted_by",
+                  "value": "84",
+                  "type": "text",
+                  "uuid": "3ce0cc60-2c06-4a51-8e63-e2daae139066"
+                },
+                {
+                  "key": "post_type",
+                  "value": "0",
+                  "type": "text",
+                  "uuid": "13a812f8-3e19-44bc-96fa-2f7c33689489",
+                  "description": "0-normal job,1-premium job"
+                },
+                {
+                  "key": "ref_code",
+                  "value": "JOBRINGER-REFID-111111",
+                  "type": "text",
+                  "uuid": "e2bb6567-8b08-48ba-b695-61f95f6241c7",
+                  "disabled": true
+                },
+                {
+                  "key": "email_subject_line",
+                  "value": "test_mail",
+                  "type": "text",
+                  "uuid": "993cedb1-8209-437c-8e16-c5a3c8738611"
+                },
+                {
+                  "key": "candidate_preference[]",
+                  "value": "3",
+                  "description": "1 => \"Fresher/Intern\",\n2 => \"Differently Abled\",\n3 => \"Retired\",\n4 => \"Defence Veteran\",\n5 => \"On Sabattical\",\n6 => \"Government Employees\",\n7 => \"Other Industry\",\n8 => \"Self Employed\",\n9 => \"LGBTQ\"",
+                  "type": "text",
+                  "uuid": "3e5be560-29ed-4171-942a-9f2cc967ff98"
+                },
+                {
+                  "key": "post_action",
+                  "value": "publish",
+                  "type": "text",
+                  "uuid": "192853b0-dc92-433a-b6d9-da53331c5849",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://jobringer.com/api/job_post_api.php",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "job_post_api.php"
+              ]
+            },
+            "description": "## Job Post API — Create a job posting\n\nCreates a new job posting for an employer.\n\n**Method:** `POST`  \n**URL:** `https://local.jobringer.com/api/job_post_api.php`\n\n### Request body\nSend as **`multipart/form-data`**.\n\n#### Form-data fields\nThe API accepts a number of form-data fields. Below are the fields currently known from this Postman request.\n\n**Required (typical):**\n- `title` *(string)* — Job title.\n- `description` *(string)* — Job description.\n- `hiring_for` *(string)* — Hiring for (role/position label).\n- `job_keywords` *(string)* — Keywords/tags.\n- `country_id[]` *(array of int/string)* — One or more country IDs.\n- `city_id[]` *(array of int/string)* — One or more city IDs.\n\n**Optional / flags / categorization:**\n- `is_featured` *(0/1)* — Mark job as featured.\n- `work_mode` *(int/string)* — Work mode identifier (e.g., onsite/remote/hybrid; value depends on your system).\n- `employment_major` *(int/string)* — Major employment type identifier.\n- `employment_minor` *(int/string)* — Minor employment type identifier.\n- `is_hide_salary_details` *(0/1)* — Hide salary details.\n\n> Notes:\n> - Fields ending with `[]` are **arrays** in `multipart/form-data`. In Postman, add multiple rows using the same key (e.g., `country_id[]` repeated per value).\n> - Types/allowed values for enumerations like `work_mode`, `employment_major`, and `employment_minor` are determined by your backend configuration.\n\n### Example `curl`\n```bash\ncurl --location 'https://local.jobringer.com/api/job_post_api.php' \\\n  --form 'title=\"test\"' \\\n  --form 'is_featured=\"0\"' \\\n  --form 'work_mode=\"5\"' \\\n  --form 'employment_major=\"5\"' \\\n  --form 'employment_minor=\"2\"' \\\n  --form 'description=\"saeft\"' \\\n  --form 'hiring_for=\"derr\"' \\\n  --form 'job_keywords=\"asf\"' \\\n  --form 'country_id[]=\"101\"' \\\n  --form 'city_id[]=\"995\"' \\\n  --form 'is_hide_salary_details=\"0\"'\n```\n\n### Responses\nResponse shape is defined by the API implementation. Common patterns:\n\n**Success (typical):**\n- HTTP `200`/`201`\n- Body includes a success indicator/message and may include the created job ID.\n\n**Error (typical):**\n- HTTP `400` for validation errors (missing/invalid fields)\n- HTTP `401`/`403` for authentication/authorization issues (if required by your setup)\n- HTTP `500` for server errors\n\nIf you save example responses for this request, they can be used for documentation and for mocks."
+          },
+          "response": []
+        },
+        {
+          "name": "delete employer",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "employer_email",
+                  "value": "dalvichirag009@gmail.com",
+                  "type": "text",
+                  "uuid": "16506bc8-9860-4f3c-b591-794bd5aaa39f"
+                }
+              ]
+            },
+            "url": {
+              "raw": "local.jobringer.com/api/delete_employer_api.php",
+              "host": [
+                "local",
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "delete_employer_api.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "draft job",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "job_id",
+                  "value": "596662",
+                  "type": "text",
+                  "uuid": "16506bc8-9860-4f3c-b591-794bd5aaa39f"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://jobringer.com/api/job_draft_api.php",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "job_draft_api.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "subuser listing",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "employer_id",
+                  "value": "84",
+                  "type": "text",
+                  "uuid": "16506bc8-9860-4f3c-b591-794bd5aaa39f"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://jobringer.com/api/manage_subuser_api.php",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "manage_subuser_api.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add subuser",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "employer_id",
+                  "value": "54698",
+                  "type": "text",
+                  "description": "id of employer whose subuser is being created"
+                },
+                {
+                  "key": "company_name",
+                  "value": "test user",
+                  "type": "text",
+                  "description": "subuser name"
+                },
+                {
+                  "key": "super_user_email",
+                  "value": "test@jobringer.com",
+                  "type": "text",
+                  "description": "email of subuser will work as username for login"
+                },
+                {
+                  "key": "super_user_password",
+                  "value": "Test@1234",
+                  "type": "text",
+                  "description": "password for subuser login "
+                },
+                {
+                  "key": "is_manage_post",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "is_manage_cand",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "is_search",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://jobringer.com/api/add_employer_subuser.php",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "add_employer_subuser.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "password update employer api",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"employer_id\":\"257259\",\r\n    \"email_otp\":\"2042\",\r\n    \"new_password\":\"L00k3r\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://jobringer.com/api/password_update_employer_api.php",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "password_update_employer_api.php"
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": null,
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "",
+                  "value": null,
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "",
+                  "value": null,
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "employer active subscriptions",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "employer_id",
+                  "value": "84",
+                  "type": "text",
+                  "uuid": "16506bc8-9860-4f3c-b591-794bd5aaa39f"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://jobringer.com/api/employer_active_subscriptions_fetch.php",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "employer_active_subscriptions_fetch.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "employer notifications",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "employer_id",
+                  "value": "84",
+                  "type": "text",
+                  "uuid": "c520d1e6-012d-4cb5-bab2-35e9b9a5acd2"
+                },
+                {
+                  "key": "page",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "a0c6aae1-f07b-418f-9917-292fab2137c0"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://jobringer.com/api/notifications_api_employer.php",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "notifications_api_employer.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "employer packages",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "categories",
+                  "value": "all",
+                  "type": "text",
+                  "uuid": "e3c6f657-bcda-4661-b18e-513a48190eab",
+                  "description": "//all,job_posting_pack,combo_pack"
+                },
+                {
+                  "key": "employer_type",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "f6959888-f7ea-455a-948d-912d068b5370"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://jobringer.com/api/employer_packages_api.php",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "employer_packages_api.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "employer create order",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "employer_id",
+                  "value": "84",
+                  "type": "text",
+                  "uuid": "01f5d4e4-f558-4cec-bbc9-bc0ccfdfdbae"
+                },
+                {
+                  "key": "pack_id",
+                  "value": "6",
+                  "description": "//retrieved from employer packages api",
+                  "type": "text",
+                  "uuid": "0d6e0200-962e-4ae7-8fef-21afa715116f"
+                },
+                {
+                  "key": "pack_name",
+                  "value": "combo_pack",
+                  "description": "//pack_category - retrieved from employer packages api",
+                  "type": "text",
+                  "uuid": "5e5a8d44-7503-40cb-a708-b2bf6c900770"
+                },
+                {
+                  "key": "status",
+                  "value": "test",
+                  "description": "//test,live changes which key is being used",
+                  "type": "text",
+                  "uuid": "a0117523-d291-41a1-81e2-d84ae3f915f9"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://jobringer.com/api/create_order_emp_api.php",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "create_order_emp_api.php"
+              ]
+            },
+            "description": "## Employer Create Order\n\nCreates a new order for an employer by associating a selected package with their account. This endpoint is used when an employer purchases or activates a job posting package.\n\n---\n\n### Request Details\n\n| Property | Value |\n| --- | --- |\n| **Method** | `POST` |\n| **URL** | `https://jobringer.com/api/create_order_emp_api.php` |\n| **Content-Type** | `multipart/form-data` |\n\n---\n\n### Form-Data Parameters\n\n| Field | Type | Required | Description |\n| --- | --- | --- | --- |\n| `employer_id` | text | Yes | The unique ID of the employer placing the order. |\n| `pack_id` | text | Yes | The ID of the package being ordered. Retrieved from the employer packages API. |\n| `pack_name` | text | Yes | The name/category of the package being ordered (e.g. `COMBOPAC,job_posting,subuser` etc). Retrieved from the employer packages API `pack_category` result field. |\n| `status` | text | Yes | Determines which payment key is used. Use `test` for test mode or `live` for production mode. |\n\n---\n\n### Notes\n\n- `pack_id` and `pack_name` should be fetched from the employer packages API before calling this endpoint.\n    \n- All four fields are required to successfully create an order.\n    \n- The `ststus` field (note the spelling) controls whether the test or live Razorpay key is returned in the response.\n    \n\n---\n\n### Response Example\n\n> **IMPORTANT:** All data from this response should be carried forward to the Razorpay API and the verify payment API. \n  \n\n``` json\n{\n  \"order_id\": \"order_SdLn6GVIus0nUe\",\n  \"key\": \"rzp_test_X0QbsFgKQ8OuPB\",\n  \"pack_id\": \"6\",\n  \"pkId\": \"6\",\n  \"pack_price\": \"525\",\n  \"total_price\": \"619.50\",\n  \"Totalprice\": \"619.50\",\n  \"pack_name\": \"COMBOPAC\",\n  \"name\": \"HINDCO Consulting Services\",\n  \"email\": \"prakashbansal@hindco.com\",\n  \"subscription_id\": \"JR-EMP-d22e5ae5\"\n}\n\n ```"
+          },
+          "response": []
+        },
+        {
+          "name": "verify employer payment",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "razorpay_payment_id",
+                  "value": "pay_SdLnFIv8se52eB",
+                  "description": "//retrieve data from razorpay sucess api response",
+                  "type": "text",
+                  "uuid": "30225495-1357-471a-8041-256de2e65a53"
+                },
+                {
+                  "key": "razorpay_order_id",
+                  "value": "order_SdLn6GVIus0nUe",
+                  "description": "//retrieve data from razorpay sucess api response",
+                  "type": "text",
+                  "uuid": "4ba7ce66-8c6e-49bc-a962-df307ae7b08d"
+                },
+                {
+                  "key": "razorpay_signature",
+                  "value": "cd544670841b8c64b8cfcee12da45c98d625a36ad1151ee18578793146648e4f",
+                  "description": "//retrieve data from razorpay sucess api response",
+                  "type": "text",
+                  "uuid": "8a1cbab4-ec55-4574-87e2-1b093aedb427"
+                },
+                {
+                  "key": "order_id",
+                  "value": "order_SdLn6GVIus0nUe",
+                  "description": "//retrieve data from razorpay sucess api response",
+                  "type": "text",
+                  "uuid": "2d015816-d096-4284-bd88-ad91486d3c0a"
+                },
+                {
+                  "key": "key",
+                  "value": "rzp_test_X0QbsFgKQ8OuPB",
+                  "description": "//razorpay key given",
+                  "type": "text",
+                  "uuid": "16733ae0-3f3b-4db6-a3ac-f41a8e40abfd"
+                },
+                {
+                  "key": "total_price",
+                  "value": "619.50",
+                  "description": "//carry data from create order api",
+                  "type": "text",
+                  "uuid": "6278316e-6dad-4d79-b5e8-163c19ccfb01"
+                },
+                {
+                  "key": "pack_id",
+                  "value": "6",
+                  "description": "//carry data from create order api",
+                  "type": "text",
+                  "uuid": "b9a0f8bd-59f0-42d5-80c5-87878c9849d8"
+                },
+                {
+                  "key": "pkId",
+                  "value": "6",
+                  "description": "//carry data from create order api",
+                  "type": "text",
+                  "uuid": "65d7336a-279a-402b-8e50-2ee67bde8fa1"
+                },
+                {
+                  "key": "pack_name",
+                  "value": "COMBOPAC",
+                  "description": "//carry data from create order api",
+                  "type": "text",
+                  "uuid": "b8ff908f-24fb-4c85-b1fa-18216db13634"
+                },
+                {
+                  "key": "employer_id",
+                  "value": "84",
+                  "description": "//carry data from create order api",
+                  "type": "text",
+                  "uuid": "90c0ea24-564a-4ed4-b77a-91f904eda615"
+                },
+                {
+                  "key": "email",
+                  "value": "prakashbansal@hindco.com",
+                  "description": "//carry data from create order api",
+                  "type": "text",
+                  "uuid": "9c72a779-df81-4f23-bc1c-96c80cf2836e"
+                },
+                {
+                  "key": "name",
+                  "value": "HINDCO",
+                  "description": "//carry data from create order api",
+                  "type": "text",
+                  "uuid": "e3be70e4-7b49-4373-9322-0fec5e8f76f7"
+                },
+                {
+                  "key": "contact",
+                  "value": "9820451402",
+                  "type": "text",
+                  "uuid": "11804e76-19ad-4107-bfae-f075237fb3a0",
+                  "disabled": true
+                },
+                {
+                  "key": "proc_to_checkout",
+                  "value": "1",
+                  "description": "//fixed flag",
+                  "type": "text",
+                  "uuid": "d859b75d-8fc5-4940-ad95-07186ed2ad79"
+                },
+                {
+                  "key": "subscription_id",
+                  "value": "JR-EMP-d22e5ae5",
+                  "description": "//carry dat from create order api",
+                  "type": "text",
+                  "uuid": "e9cf259b-5ef5-402c-b5f7-c4bdee2ec82d"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://jobringer.com/api/verify-payment-emp.php",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "verify-payment-emp.php"
+              ]
+            },
+            "description": "## Verify Employer Payment\n\nThis endpoint verifies and processes an employer's payment after a successful Razorpay transaction. It validates the Razorpay payment signature, confirms the order, and activates the employer's subscription package. This should be called immediately after receiving a successful response from the Razorpay payment gateway.\n\n---\n\n### Request Details\n\n| Property | Value |\n| --- | --- |\n| **Method** | `POST` |\n| **URL** | `https://jobringer.com/verify-payment-emp.php` |\n| **Content-Type** | `multipart/form-data` |\n| **Auth** | None |\n\n---\n\n### Request Body Parameters\n\nAll fields are sent as `multipart/form-data`.\n\n#### Razorpay Payment Response Fields\n\nThese fields are retrieved directly from the Razorpay success callback/API response and must be forwarded as-is to verify the payment.\n\n| Field | Type | Required | Example Value | Description |\n| --- | --- | --- | --- | --- |\n| `razorpay_payment_id` | `string` | Required | `pay_SdLnFIv8se52eB` | Unique payment ID returned by Razorpay upon successful payment. |\n| `razorpay_order_id` | `string` | Required | `order_SdLn6GVIus0nUe` | Order ID returned by Razorpay in the payment success response. |\n| `razorpay_signature` | `string` | Required | `cd544670841b8c64b8cfcee12da45c98d625a36ad1151ee18578793146648e4f` | HMAC-SHA256 signature returned by Razorpay, used to verify payment authenticity. |\n| `order_id` | `string` | Required | `order_SdLn6GVIus0nUe` | The Razorpay order ID (same as `razorpay_order_id`), passed separately for server-side verification. |\n| `key` | `string` | Required | `rzp_test_X0QbsFgKQ8OuPB` | The Razorpay API key (public key) used to initiate the payment. Use `rzp_live_\\*` in production. |\n\n#### Order & Package Details (from Create Order API)\n\nThese fields carry forward the order and employer details that were established during the create order step.\n\n| Field | Type | Required | Example Value | Description |\n| --- | --- | --- | --- | --- |\n| `total_price` | `number` | Required | `619.50` | Total amount charged for the package (in INR). |\n| `pack_id` | `integer` | Required | `6` | ID of the subscription package selected by the employer. |\n| `pkId` | `integer` | Required | `6` | Duplicate of `pack_id`; passed separately as required by the API. |\n| `pack_name` | `string` | Required | `COMBOPAC` | Name of the subscription package. |\n| `employer_id` | `integer` | Required | `84` | Unique ID of the employer making the payment. |\n| `email` | `string` | Required | `prakashbansal@hindco.com` | Email address of the employer, used for payment confirmation. |\n| `name` | `string` | Required | `HINDCO` | Name of the employer or company. |\n| `subscription_id` | `string` | Required | `JR-EMP-d22e5ae5` | Internal subscription reference ID generated during the create order step. |\n\n#### Other Fields\n\n| Field | Type | Required | Example Value | Description |\n| --- | --- | --- | --- | --- |\n| `proc_to_checkout` | `integer` | Required | `1` | Fixed flag. Always set to `1` to indicate the request is proceeding to checkout/verification. |\n| `contact` | `string` | Optional | `9820451402` | Employer's contact number. This field is currently **disabled** and not sent with the request. |\n\n---\n\n### Notes\n\n- This endpoint must be called **after** a successful Razorpay payment, using the data returned in the Razorpay success handler.\n    \n- The `razorpay_signature` is critical for server-side payment verification. Do not alter this value.\n    \n- Ensure `razorpay_order_id` and `order_id` contain the same value.\n    \n- Switch the `key` field from a test key (`rzp_test_\\*`) to a live key (`rzp_live_\\*`) before deploying to production.\n    \n- most of the data for this request is carried forward from the response of api request - `employer create order`"
+          },
+          "response": []
+        },
+        {
+          "name": "candidate actions by employer",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "employer_id",
+                  "value": "84",
+                  "type": "text",
+                  "uuid": "3eb70298-1c2d-446b-b68a-cb636452eab3",
+                  "description": "id of employer"
+                },
+                {
+                  "key": "job_id",
+                  "value": "5329",
+                  "type": "text",
+                  "uuid": "aa08ae45-5f84-41d4-bb09-25f181bac0ed",
+                  "description": "id of job applied by jobseeker"
+                },
+                {
+                  "key": "jobseeker_id",
+                  "value": "257259",
+                  "type": "text",
+                  "uuid": "5458c80b-5014-405a-bd6a-647b7cf12955",
+                  "description": "jobseeker on whom action is performed"
+                },
+                {
+                  "key": "status_id",
+                  "value": "rejected",
+                  "type": "text",
+                  "uuid": "95170e3c-e86a-48b2-845e-d1692bd166b9",
+                  "description": "shortlisted,rejected,on_hold"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://jobringer.com/api/jobseeker_job_status.php",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "jobseeker_job_status.php"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Jobseeker API",
+      "item": [
+        {
+          "name": "job listing api basic",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "limit",
+                  "value": "21",
+                  "type": "text",
+                  "uuid": "c9b588e0-e373-46c9-a97d-71a9fde8d201"
+                },
+                {
+                  "key": "page",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "6f27f389-9ff6-4349-a5fe-13b65d5c8e27"
+                },
+                {
+                  "key": "keywords",
+                  "value": "hindco",
+                  "type": "text",
+                  "uuid": "5cd17522-49c4-4c3d-a3d5-bea2bf1639b1"
+                },
+                {
+                  "key": "functional_area",
+                  "value": "Banking / Credit Cards / E-Commerce Payment Gateway",
+                  "type": "text",
+                  "uuid": "1d6c7e28-214a-44f5-b3d1-602ba0a12af0",
+                  "disabled": true
+                },
+                {
+                  "key": "industry",
+                  "value": "IT - Software / Product Development",
+                  "type": "text",
+                  "uuid": "54ab675e-5cd3-484a-a6a2-ee5d3f4e8f1a",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://local.jobringer.com/api/job_list_api.php",
+              "protocol": "http",
+              "host": [
+                "local",
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "job_list_api.php"
+              ],
+              "query": [
+                {
+                  "key": "featured",
+                  "value": null,
+                  "disabled": true
+                },
+                {
+                  "key": "keywords",
+                  "value": "mumbai",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "employer listing",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://jobringer.com/api/employer_list_api.php",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "employer_list_api.php"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "limit",
+                  "value": "100",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "filter",
+                  "value": "recent",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "endpoint",
+                  "value": "list",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "search",
+                  "value": "consulting",
+                  "disabled": true
+                },
+                {
+                  "key": "featured",
+                  "value": null,
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "jobseeker registration",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "test jobseeker",
+                  "type": "text",
+                  "uuid": "cb0fe4fb-4bba-4493-8e75-6c8fa8882ae7"
+                },
+                {
+                  "key": "email",
+                  "value": "it.jobtechventures1121@gmail.com",
+                  "type": "text",
+                  "uuid": "794681f6-7c9e-4fc2-9111-091f41b59954"
+                },
+                {
+                  "key": "country_code1",
+                  "value": "91",
+                  "type": "text",
+                  "uuid": "e0b480e6-9900-452d-8d9d-30d291358809"
+                },
+                {
+                  "key": "contact_no1",
+                  "value": "1111111111",
+                  "type": "text",
+                  "uuid": "a24c0d67-c18f-4591-ada4-875cb12b9833"
+                },
+                {
+                  "key": "profile_type",
+                  "value": "4",
+                  "type": "text",
+                  "uuid": "ad1e07e0-d05f-4605-b490-bda9318e7d2f"
+                },
+                {
+                  "key": "check_if_wap_no1",
+                  "value": "0",
+                  "type": "text",
+                  "uuid": "4c504b59-2c91-4914-99f7-78d4a7b0c225"
+                },
+                {
+                  "key": "resume_file",
+                  "type": "file",
+                  "uuid": "48c93800-a47a-4631-9c9e-afa794236136",
+                  "src": "/C:/Users/lenovo/Downloads/100 JobRinger FAQs for Job Seekers.docx"
+                },
+                {
+                  "key": "profile_photo_file",
+                  "type": "file",
+                  "uuid": "c04e68c2-cdc9-4c70-87db-46d3ddbce7b9",
+                  "src": "/C:/Users/lenovo/Downloads/the_future_of_hiring_patterns_realistic.gif"
+                },
+                {
+                  "key": "dob",
+                  "value": "2007-11-28",
+                  "type": "text",
+                  "uuid": "3a2b8f39-306f-4ce9-90d1-70ef47fc55fa"
+                },
+                {
+                  "key": "hide_dob_from_employer",
+                  "value": "0",
+                  "type": "text",
+                  "uuid": "807aced4-434d-4965-b1c5-96088f8a803e"
+                },
+                {
+                  "key": "gender",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "e057a23f-1b36-4f77-923d-a5c5c2fddaa0"
+                },
+                {
+                  "key": "educational_degree",
+                  "value": "2",
+                  "type": "text",
+                  "uuid": "8ff945ab-f280-41e6-8af3-803e59f067a7"
+                },
+                {
+                  "key": "Specialization",
+                  "value": "3",
+                  "type": "text",
+                  "uuid": "7cec27e6-d3d4-4d45-99fc-ae05cdf1aa9c"
+                },
+                {
+                  "key": "functional_area",
+                  "value": "2",
+                  "type": "text",
+                  "uuid": "0789e933-dc3d-44d9-8f15-1e5c025ed38b"
+                },
+                {
+                  "key": "industry",
+                  "value": "2",
+                  "type": "text",
+                  "uuid": "32497a2b-d89c-4578-aead-5d8adc0f8d39"
+                },
+                {
+                  "key": "job_role",
+                  "value": "4",
+                  "type": "text",
+                  "uuid": "7410295c-f20d-4a67-9706-b2d1a92fd680"
+                },
+                {
+                  "key": "notice_period",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "d1fd3ad1-d2ec-4a1d-b391-a42d8b72ef0e"
+                },
+                {
+                  "key": "exp-yrs",
+                  "value": "3",
+                  "type": "text",
+                  "uuid": "0062646a-7db5-461b-a0f2-d0abff6b05c7"
+                },
+                {
+                  "key": "exp-months",
+                  "value": "7",
+                  "type": "text",
+                  "uuid": "5a80972a-90b4-4bc0-8c04-3d4f7024a2f8"
+                },
+                {
+                  "key": "company",
+                  "value": "test company",
+                  "type": "text",
+                  "uuid": "afa99bcb-c0ab-426e-95f2-4fb8967d5c98"
+                },
+                {
+                  "key": "designation",
+                  "value": "tster",
+                  "type": "text",
+                  "uuid": "3c531eb0-9e75-4ba4-8f19-89b3054682e1"
+                },
+                {
+                  "key": "currency",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "99d43e64-81bf-47d5-a50c-b1ae7c79aff5"
+                },
+                {
+                  "key": "currentSalary",
+                  "value": "250000",
+                  "type": "text",
+                  "uuid": "c747ce31-c013-4267-8869-e4b310b425a8"
+                },
+                {
+                  "key": "salaryUnit",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "0bc264b4-12c2-4f02-a609-b7016d098ae4"
+                },
+                {
+                  "key": "keywords",
+                  "value": "tester",
+                  "type": "text",
+                  "uuid": "30934e42-f257-4b10-93f3-25deb0d4a0d6"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://jobringer.com/api/jobseeker_signup_api.php",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "jobseeker_signup_api.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "jobseeker update profile",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "jobseeker_id",
+                  "value": "3010448",
+                  "type": "text",
+                  "description": "//compulsory"
+                },
+                {
+                  "key": "name",
+                  "value": "test1 jobseeker",
+                  "type": "text",
+                  "uuid": "cb0fe4fb-4bba-4493-8e75-6c8fa8882ae7"
+                },
+                {
+                  "key": "country_code1",
+                  "value": "91",
+                  "type": "text",
+                  "uuid": "e0b480e6-9900-452d-8d9d-30d291358809"
+                },
+                {
+                  "key": "contact_no1",
+                  "value": "1111111111",
+                  "type": "text",
+                  "uuid": "a24c0d67-c18f-4591-ada4-875cb12b9833"
+                },
+                {
+                  "key": "profile_type",
+                  "value": "4",
+                  "type": "text",
+                  "uuid": "ad1e07e0-d05f-4605-b490-bda9318e7d2f"
+                },
+                {
+                  "key": "check_if_wap_no1",
+                  "value": "0",
+                  "type": "text",
+                  "uuid": "4c504b59-2c91-4914-99f7-78d4a7b0c225"
+                },
+                {
+                  "key": "dob",
+                  "value": "2001-11-08",
+                  "type": "text",
+                  "uuid": "3a2b8f39-306f-4ce9-90d1-70ef47fc55fa"
+                },
+                {
+                  "key": "hide_dob_from_employer",
+                  "value": "0",
+                  "type": "text",
+                  "uuid": "807aced4-434d-4965-b1c5-96088f8a803e"
+                },
+                {
+                  "key": "educational_degree",
+                  "value": "2",
+                  "type": "text",
+                  "uuid": "8ff945ab-f280-41e6-8af3-803e59f067a7"
+                },
+                {
+                  "key": "specialization",
+                  "value": "3",
+                  "type": "text"
+                },
+                {
+                  "key": "functional_area",
+                  "value": "2,5",
+                  "type": "text",
+                  "uuid": "0789e933-dc3d-44d9-8f15-1e5c025ed38b"
+                },
+                {
+                  "key": "industry",
+                  "value": "2",
+                  "type": "text",
+                  "uuid": "32497a2b-d89c-4578-aead-5d8adc0f8d39"
+                },
+                {
+                  "key": "job_role",
+                  "value": "4",
+                  "type": "text",
+                  "uuid": "7410295c-f20d-4a67-9706-b2d1a92fd680"
+                },
+                {
+                  "key": "notice_period",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "d1fd3ad1-d2ec-4a1d-b391-a42d8b72ef0e"
+                },
+                {
+                  "key": "exp-yrs",
+                  "value": "3",
+                  "type": "text",
+                  "uuid": "0062646a-7db5-461b-a0f2-d0abff6b05c7"
+                },
+                {
+                  "key": "exp-months",
+                  "value": "7",
+                  "type": "text",
+                  "uuid": "5a80972a-90b4-4bc0-8c04-3d4f7024a2f8"
+                },
+                {
+                  "key": "currency",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "99d43e64-81bf-47d5-a50c-b1ae7c79aff5"
+                },
+                {
+                  "key": "currentSalary",
+                  "value": "250000",
+                  "type": "text",
+                  "uuid": "c747ce31-c013-4267-8869-e4b310b425a8"
+                },
+                {
+                  "key": "salaryUnit",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "0bc264b4-12c2-4f02-a609-b7016d098ae4"
+                },
+                {
+                  "key": "keywords",
+                  "value": "tester",
+                  "type": "text",
+                  "uuid": "30934e42-f257-4b10-93f3-25deb0d4a0d6"
+                },
+                {
+                  "key": "resume_file",
+                  "type": "file",
+                  "uuid": "48c93800-a47a-4631-9c9e-afa794236136",
+                  "description": "//not compulsory",
+                  "src": "/C:/Users/lenovo/Downloads/100 JobRinger FAQs for Job Seekers.docx"
+                },
+                {
+                  "key": "profile_photo_file",
+                  "type": "file",
+                  "uuid": "c04e68c2-cdc9-4c70-87db-46d3ddbce7b9",
+                  "description": "//not compulsory",
+                  "src": "/C:/Users/lenovo/Pictures/hindco_celebrate.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://jobringer.com/api/jobseeker_profile_edit_api.php",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "jobseeker_profile_edit_api.php"
+              ]
+            },
+            "description": "## 🌐 Endpoint\n\nhttps://jobringer.com/api/jobseeker_profile_edit_api.php  \n  \n\n## 🔐 Headers\n\n| Key | Value | Required |\n| --- | --- | --- |\n| Content-Type | multipart/form-data | Yes |\n| Accept | application/json | Yes |\n\n⚠️ Note: This API supports file upload (`resume_file`, `profile_photo_file`), so it MUST be `multipart/form-data`.\n\n---\n\n## 📥 Request Type\n\n- `POST`\n    \n- Form Data (not JSON)\n    \n\n---\n\n## 📌 Required Parameters\n\n### 1\\. Core\n\n| Field | Type | Required | Description |\n| --- | --- | --- | --- |\n| jobseeker_id | int | Yes | ID of jobseeker to update |\n| name | string | Yes | Full name (auto split into first/middle/last) |\n\n---\n\n## 📌 Optional Fields (Profile Data)\n\n### 🧑 Personal Details\n\n| Field | Type | Notes |\n| --- | --- | --- |\n| profile_title | string | Job title headline |\n| profile_summary | string | Summary / bio |\n| dob | date | Format: YYYY-MM-DD or any strtotime-compatible |\n| hide_dob_from_employer | 0/1 | Privacy flag |\n\n---\n\n### 📞 Contact\n\n| Field | Type |\n| --- | --- |\n| contact_no1 | string |\n| country_code1 | string |\n| check_if_wap_no1 | string |\n\n---\n\n### 📍 Location\n\n| Field | Type |\n| --- | --- |\n| country | int |\n| city_id | int |\n\n---\n\n### 💼 Job Preferences\n\n| Field | Type |\n| --- | --- |\n| profile_type | string |\n| industry\\[\\] | array OR string |\n| functional_area\\[\\] | array OR string |\n| job_role\\[\\] | array OR string |\n| keywords\\[\\] | array OR string |\n\n---\n\n### 🎓 Education\n\n| Field | Type |\n| --- | --- |\n| educational_degree\\[\\] | array OR string |\n| specialization\\[\\] | array OR string |\n\n---\n\n### 💰 Salary\n\n| Field | Type |\n| --- | --- |\n| salaryUnit | string |\n| currency | string |\n| currentSalary | number |\n\n---\n\n### ⏳ Experience\n\n| Field | Type |\n| --- | --- |\n| exp-yrs | int |\n| exp-months | int |\n| notice_period | string |\n\n---\n\n## 📎 File Uploads\n\n### 1\\. Resume File\n\n| Field | Type | Rules |\n| --- | --- | --- |\n| resume_file | file | Max 2MB |\n\nAllowed formats:\n\n- PDF\n    \n- DOC / DOCX\n    \n- RTF\n    \n- TXT\n    \n\n---\n\n### 2\\. Profile Photo\n\n| Field | Type |\n| --- | --- |\n| profile_photo_file | image |\n\nAllowed:\n\n- JPG\n    \n- PNG\n    \n\n---\n\n## 📤 Success Response\n\n```\n{  \"success\": true,  \"message\": \"Jobseeker basic details updated\"}\n\n ```\n\n---\n\n## ❌ Error Responses\n\n### Missing Jobseeker ID\n\n```\n{  \"success\": false,  \"errors\": [\"IDREQUIRED\"]}\n\n ```\n\n---\n\n### Missing Name\n\n```\n{  \"success\": false,  \"errors\": [\"NAMEREQUIRED\"]}\n\n ```\n\n---\n\n### Invalid File Size\n\n```\n{  \"success\": false,  \"errors\": [\"INVALIDFILESIZE\"]}\n\n ```\n\n---\n\n### Invalid Image Format\n\n```\n{  \"success\": false,  \"errors\": [\"INVALIDIMAGEFORMAT\"]}\n\n ```\n\n---\n\n### Upload Failure\n\n```\n{  \"success\": false,  \"errors\": [\"FILEUPLOADFAILED\"]}\n\n ```\n\n---\n\n### Jobseeker Not Found\n\n```\n{  \"success\": false,  \"message\": \"Jobseeker data not present\"}\n\n ```\n\n---\n\n# 🧪 Postman Setup (Step-by-Step)\n\n## 1\\. Method\n\n```\nPOST\n\n ```\n\n---\n\n## 2\\. URL\n\n```\nhttps://your-domain.com/api/jobseeker/update-profile.php\n\n ```\n\n---\n\n## 3\\. Body → form-data\n\n### Add fields like this:\n\n| Key | Value | Type |\n| --- | --- | --- |\n| jobseeker_id | 123 | Text |\n| name | John Doe | Text |\n| profile_title | Software Engineer | Text |\n| contact_no1 | 9876543210 | Text |\n| country_code1 | +91 | Text |\n| profile_summary | Experienced developer... | Text |\n| dob | 1995-01-01 | Text |\n| industry\\[\\] | IT | Text |\n| functional_area\\[\\] | Development | Text |\n| resume_file | (upload file) | File |\n| profile_photo_file | (upload image) | File |"
+          },
+          "response": []
+        },
+        {
+          "name": "jobseeker resume update",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "jobseeker_id",
+                  "value": "257259",
+                  "type": "text",
+                  "uuid": "cb0fe4fb-4bba-4493-8e75-6c8fa8882ae7"
+                },
+                {
+                  "key": "resume_file",
+                  "type": "file",
+                  "uuid": "48c93800-a47a-4631-9c9e-afa794236136",
+                  "src": "/C:/Users/lenovo/Downloads/jobringer_privacy_policy.pdf"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://jobringer.com/api/resume_update_api.php",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "resume_update_api.php"
+              ]
+            },
+            "description": "## Jobseeker Resume Update\n\nUpdates the resume and profile information for a registered jobseeker. This endpoint accepts multipart form-data and allows updating personal details, educational background, work experience, salary expectations, and file uploads (resume and profile photo).\n\n---\n\n### Request Details\n\n| Property         | Value                                              |\n|------------------|----------------------------------------------------|\n| **Method**       | `POST`                                             |\n| **URL**          | `https://jobringer.com/api/resume_update_api.php`  |\n| **Content-Type** | `multipart/form-data`                              |\n| **Auth**         | None (jobseeker identified via `jobseeker_id`)     |\n\n---\n\n### Form-Data Parameters\n\n| Parameter                | Type | Required | Description                                                                                   |\n|--------------------------|------|----------|-----------------------------------------------------------------------------------------------|\n| `jobseeker_id`           | text | Required | The unique ID of the jobseeker whose resume is being updated.                                 |\n| `contact_no1`            | text | Optional | Primary contact number of the jobseeker.                                                      |\n| `profile_type`           | text | Optional | Type of profile, represented as a numeric code.                                               |\n| `check_if_wap_no1`       | text | Optional | Indicates whether `contact_no1` is a WhatsApp number. Accepted values: `0` (No) or `1` (Yes).|\n| `resume_file`            | file | Optional | The resume file to upload (e.g., PDF, DOC).                                                   |\n| `profile_photo_file`     | file | Optional | The profile photo file to upload.                                                             |\n| `dob`                    | text | Optional | Date of birth in `YYYY-MM-DD` format.                                                         |\n| `hide_dob_from_employer` | text | Optional | Whether to hide the date of birth from employers. Accepted values: `0` (No) or `1` (Yes).    |\n| `gender`                 | text | Optional | Gender of the jobseeker, represented as a numeric code.                                       |\n| `educational_degree`     | text | Optional | Highest educational degree, represented as a numeric code.                                    |\n| `Specialization`         | text | Optional | Specialization or field of study, represented as a numeric code.                              |\n| `functional_area`        | text | Optional | Functional area of work, represented as a numeric code.                                       |\n| `industry`               | text | Optional | Industry type, represented as a numeric code.                                                 |\n| `job_role`               | text | Optional | Job role, represented as a numeric code.                                                      |\n| `notice_period`          | text | Optional | Notice period, represented as a numeric code.                                                 |\n| `exp-yrs`                | text | Optional | Years of experience.                                                                          |\n| `exp-months`             | text | Optional | Months of experience (in addition to years).                                                  |\n| `company`                | text | Optional | Current or most recent company name.                                                          |\n| `designation`            | text | Optional | Current or most recent job designation or title.                                              |\n| `currency`               | text | Optional | Currency type for salary, represented as a numeric code.                                      |\n| `currentSalary`          | text | Optional | Current salary amount.                                                                        |\n| `salaryUnit`             | text | Optional | Salary unit (e.g., per month/year), represented as a numeric code.                            |\n| `keywords`               | text | Optional | Skills or keywords associated with the jobseeker's profile.                                   |\n\n---\n\n### Response\n\n#### Success (200 OK)\n\n```json\n{\n  \"status\": \"success\",\n  \"message\": \"Resume updated successfully.\"\n}\n```\n\n#### Error — Missing Required Field (200 OK)\n\n```json\n{\n  \"status\": \"error\",\n  \"message\": \"Jobseeker ID is required.\"\n}\n```\n\n#### Error — Invalid Jobseeker ID (200 OK)\n\n```json\n{\n  \"status\": \"error\",\n  \"message\": \"Invalid jobseeker ID.\"\n}\n```\n\n---\n\n### Notes\n\n- Only `jobseeker_id` is required. All other fields are optional — only the fields included in the request will be updated.\n- File uploads (`resume_file`, `profile_photo_file`) must be sent as binary file parts in the multipart form.\n- Numeric code fields (e.g., `gender`, `industry`, `job_role`) correspond to values defined in the platform's lookup tables. Use the relevant fetch endpoints (e.g., `all job roles fetch`, `all industry sectors fetch`) to retrieve valid codes.\n- The `Specialization` parameter uses a capital \"S\" — ensure the key is sent exactly as shown.\n- Salary fields (`currentSalary`, `salaryUnit`, `currency`) should be submitted together for consistent data.\n\n---"
+          },
+          "response": []
+        },
+        {
+          "name": "jobseeker profile photo update",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "jobseeker_id",
+                  "value": "3010448",
+                  "type": "text",
+                  "uuid": "cb0fe4fb-4bba-4493-8e75-6c8fa8882ae7"
+                },
+                {
+                  "key": "profile_photo_file",
+                  "type": "file",
+                  "uuid": "48c93800-a47a-4631-9c9e-afa794236136",
+                  "description": "//file",
+                  "src": "/C:/Users/lenovo/Pictures/logo200.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://jobringer.com/api/profile_photo_update_api.php",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "profile_photo_update_api.php"
+              ]
+            },
+            "description": "## Jobseeker Resume Update\n\nUpdates the resume and profile information for a registered jobseeker. This endpoint accepts multipart form-data and allows updating personal details, educational background, work experience, salary expectations, and file uploads (resume and profile photo).\n\n---\n\n### Request Details\n\n| Property         | Value                                              |\n|------------------|----------------------------------------------------|\n| **Method**       | `POST`                                             |\n| **URL**          | `https://jobringer.com/api/resume_update_api.php`  |\n| **Content-Type** | `multipart/form-data`                              |\n| **Auth**         | None (jobseeker identified via `jobseeker_id`)     |\n\n---\n\n### Form-Data Parameters\n\n| Parameter                | Type | Required | Description                                                                                   |\n|--------------------------|------|----------|-----------------------------------------------------------------------------------------------|\n| `jobseeker_id`           | text | Required | The unique ID of the jobseeker whose resume is being updated.                                 |\n| `contact_no1`            | text | Optional | Primary contact number of the jobseeker.                                                      |\n| `profile_type`           | text | Optional | Type of profile, represented as a numeric code.                                               |\n| `check_if_wap_no1`       | text | Optional | Indicates whether `contact_no1` is a WhatsApp number. Accepted values: `0` (No) or `1` (Yes).|\n| `resume_file`            | file | Optional | The resume file to upload (e.g., PDF, DOC).                                                   |\n| `profile_photo_file`     | file | Optional | The profile photo file to upload.                                                             |\n| `dob`                    | text | Optional | Date of birth in `YYYY-MM-DD` format.                                                         |\n| `hide_dob_from_employer` | text | Optional | Whether to hide the date of birth from employers. Accepted values: `0` (No) or `1` (Yes).    |\n| `gender`                 | text | Optional | Gender of the jobseeker, represented as a numeric code.                                       |\n| `educational_degree`     | text | Optional | Highest educational degree, represented as a numeric code.                                    |\n| `Specialization`         | text | Optional | Specialization or field of study, represented as a numeric code.                              |\n| `functional_area`        | text | Optional | Functional area of work, represented as a numeric code.                                       |\n| `industry`               | text | Optional | Industry type, represented as a numeric code.                                                 |\n| `job_role`               | text | Optional | Job role, represented as a numeric code.                                                      |\n| `notice_period`          | text | Optional | Notice period, represented as a numeric code.                                                 |\n| `exp-yrs`                | text | Optional | Years of experience.                                                                          |\n| `exp-months`             | text | Optional | Months of experience (in addition to years).                                                  |\n| `company`                | text | Optional | Current or most recent company name.                                                          |\n| `designation`            | text | Optional | Current or most recent job designation or title.                                              |\n| `currency`               | text | Optional | Currency type for salary, represented as a numeric code.                                      |\n| `currentSalary`          | text | Optional | Current salary amount.                                                                        |\n| `salaryUnit`             | text | Optional | Salary unit (e.g., per month/year), represented as a numeric code.                            |\n| `keywords`               | text | Optional | Skills or keywords associated with the jobseeker's profile.                                   |\n\n---\n\n### Response\n\n#### Success (200 OK)\n\n```json\n{\n  \"status\": \"success\",\n  \"message\": \"Resume updated successfully.\"\n}\n```\n\n#### Error — Missing Required Field (200 OK)\n\n```json\n{\n  \"status\": \"error\",\n  \"message\": \"Jobseeker ID is required.\"\n}\n```\n\n#### Error — Invalid Jobseeker ID (200 OK)\n\n```json\n{\n  \"status\": \"error\",\n  \"message\": \"Invalid jobseeker ID.\"\n}\n```\n\n---\n\n### Notes\n\n- Only `jobseeker_id` is required. All other fields are optional — only the fields included in the request will be updated.\n- File uploads (`resume_file`, `profile_photo_file`) must be sent as binary file parts in the multipart form.\n- Numeric code fields (e.g., `gender`, `industry`, `job_role`) correspond to values defined in the platform's lookup tables. Use the relevant fetch endpoints (e.g., `all job roles fetch`, `all industry sectors fetch`) to retrieve valid codes.\n- The `Specialization` parameter uses a capital \"S\" — ensure the key is sent exactly as shown.\n- Salary fields (`currentSalary`, `salaryUnit`, `currency`) should be submitted together for consistent data.\n\n---"
+          },
+          "response": []
+        },
+        {
+          "name": "password verify jobseeker",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\":\"chiragdalvi2712@gmail.com\",\r\n    \"password\":\"Str0nt!um\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://jobringer.com/api/user_login_api.php?endpoint=verify-jobseeker-password",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "user_login_api.php"
+              ],
+              "query": [
+                {
+                  "key": "endpoint",
+                  "value": "verify-jobseeker-password"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "otp verify jobseeker",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\":\"chiragdalvi2712@gmail.com\",\r\n    \"otp\":\"123456\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://jobringer.com/api/user_login_api.php?endpoint=verify-jobseeker-otp",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "user_login_api.php"
+              ],
+              "query": [
+                {
+                  "key": "endpoint",
+                  "value": "verify-jobseeker-otp"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "otp send jobseeker",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\":\"chiragdalvi2712@gmail.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://jobringer.com/api/user_login_api.php?endpoint=check-jobseeker-otp",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "user_login_api.php"
+              ],
+              "query": [
+                {
+                  "key": "endpoint",
+                  "value": "check-jobseeker-otp"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "job apply",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "jobseeker_id",
+                  "value": "257259",
+                  "type": "text",
+                  "uuid": "a3fa80b4-2954-4fdf-acac-31bfe4a38d2c"
+                },
+                {
+                  "key": "job_id",
+                  "type": "text",
+                  "uuid": "68ba5d3c-1327-4c18-86d4-25148b6a1160",
+                  "value": "51771"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://jobringer.com/api/job_apply_api.php",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "job_apply_api.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "job apply Copy",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "jobseeker_id",
+                  "value": "257259",
+                  "type": "text",
+                  "uuid": "a3fa80b4-2954-4fdf-acac-31bfe4a38d2c"
+                },
+                {
+                  "key": "job_id",
+                  "type": "text",
+                  "uuid": "68ba5d3c-1327-4c18-86d4-25148b6a1160",
+                  "value": "51771"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://jobringer.com/api/job_apply_api.php",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "job_apply_api.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "verify employer payment Copy",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "razorpay_payment_id",
+                  "value": "pay_SdLnFIv8se52eB",
+                  "description": "//retrieve data from razorpay sucess api response",
+                  "type": "text",
+                  "uuid": "30225495-1357-471a-8041-256de2e65a53"
+                },
+                {
+                  "key": "razorpay_order_id",
+                  "value": "order_SdLn6GVIus0nUe",
+                  "description": "//retrieve data from razorpay sucess api response",
+                  "type": "text",
+                  "uuid": "4ba7ce66-8c6e-49bc-a962-df307ae7b08d"
+                },
+                {
+                  "key": "razorpay_signature",
+                  "value": "cd544670841b8c64b8cfcee12da45c98d625a36ad1151ee18578793146648e4f",
+                  "description": "//retrieve data from razorpay sucess api response",
+                  "type": "text",
+                  "uuid": "8a1cbab4-ec55-4574-87e2-1b093aedb427"
+                },
+                {
+                  "key": "order_id",
+                  "value": "order_SdLn6GVIus0nUe",
+                  "description": "//retrieve data from razorpay sucess api response",
+                  "type": "text",
+                  "uuid": "2d015816-d096-4284-bd88-ad91486d3c0a"
+                },
+                {
+                  "key": "key",
+                  "value": "rzp_test_X0QbsFgKQ8OuPB",
+                  "description": "//razorpay key given",
+                  "type": "text",
+                  "uuid": "16733ae0-3f3b-4db6-a3ac-f41a8e40abfd"
+                },
+                {
+                  "key": "total_price",
+                  "value": "619.50",
+                  "description": "//carry data from create order api",
+                  "type": "text",
+                  "uuid": "6278316e-6dad-4d79-b5e8-163c19ccfb01"
+                },
+                {
+                  "key": "pack_id",
+                  "value": "6",
+                  "description": "//carry data from create order api",
+                  "type": "text",
+                  "uuid": "b9a0f8bd-59f0-42d5-80c5-87878c9849d8"
+                },
+                {
+                  "key": "pkId",
+                  "value": "6",
+                  "description": "//carry data from create order api",
+                  "type": "text",
+                  "uuid": "65d7336a-279a-402b-8e50-2ee67bde8fa1"
+                },
+                {
+                  "key": "pack_name",
+                  "value": "COMBOPAC",
+                  "description": "//carry data from create order api",
+                  "type": "text",
+                  "uuid": "b8ff908f-24fb-4c85-b1fa-18216db13634"
+                },
+                {
+                  "key": "employer_id",
+                  "value": "84",
+                  "description": "//carry data from create order api",
+                  "type": "text",
+                  "uuid": "90c0ea24-564a-4ed4-b77a-91f904eda615"
+                },
+                {
+                  "key": "email",
+                  "value": "prakashbansal@hindco.com",
+                  "description": "//carry data from create order api",
+                  "type": "text",
+                  "uuid": "9c72a779-df81-4f23-bc1c-96c80cf2836e"
+                },
+                {
+                  "key": "name",
+                  "value": "HINDCO",
+                  "description": "//carry data from create order api",
+                  "type": "text",
+                  "uuid": "e3be70e4-7b49-4373-9322-0fec5e8f76f7"
+                },
+                {
+                  "key": "contact",
+                  "value": "9820451402",
+                  "type": "text",
+                  "uuid": "11804e76-19ad-4107-bfae-f075237fb3a0",
+                  "disabled": true
+                },
+                {
+                  "key": "proc_to_checkout",
+                  "value": "1",
+                  "description": "//fixed flag",
+                  "type": "text",
+                  "uuid": "d859b75d-8fc5-4940-ad95-07186ed2ad79"
+                },
+                {
+                  "key": "subscription_id",
+                  "value": "JR-EMP-d22e5ae5",
+                  "description": "//carry dat from create order api",
+                  "type": "text",
+                  "uuid": "e9cf259b-5ef5-402c-b5f7-c4bdee2ec82d"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://jobringer.com/api/verify-payment-emp.php",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "verify-payment-emp.php"
+              ]
+            },
+            "description": "## Verify Employer Payment\n\nThis endpoint verifies and processes an employer's payment after a successful Razorpay transaction. It validates the Razorpay payment signature, confirms the order, and activates the employer's subscription package. This should be called immediately after receiving a successful response from the Razorpay payment gateway.\n\n---\n\n### Request Details\n\n| Property | Value |\n| --- | --- |\n| **Method** | `POST` |\n| **URL** | `https://jobringer.com/verify-payment-emp.php` |\n| **Content-Type** | `multipart/form-data` |\n| **Auth** | None |\n\n---\n\n### Request Body Parameters\n\nAll fields are sent as `multipart/form-data`.\n\n#### Razorpay Payment Response Fields\n\nThese fields are retrieved directly from the Razorpay success callback/API response and must be forwarded as-is to verify the payment.\n\n| Field | Type | Required | Example Value | Description |\n| --- | --- | --- | --- | --- |\n| `razorpay_payment_id` | `string` | Required | `pay_SdLnFIv8se52eB` | Unique payment ID returned by Razorpay upon successful payment. |\n| `razorpay_order_id` | `string` | Required | `order_SdLn6GVIus0nUe` | Order ID returned by Razorpay in the payment success response. |\n| `razorpay_signature` | `string` | Required | `cd544670841b8c64b8cfcee12da45c98d625a36ad1151ee18578793146648e4f` | HMAC-SHA256 signature returned by Razorpay, used to verify payment authenticity. |\n| `order_id` | `string` | Required | `order_SdLn6GVIus0nUe` | The Razorpay order ID (same as `razorpay_order_id`), passed separately for server-side verification. |\n| `key` | `string` | Required | `rzp_test_X0QbsFgKQ8OuPB` | The Razorpay API key (public key) used to initiate the payment. Use `rzp_live_\\*` in production. |\n\n#### Order & Package Details (from Create Order API)\n\nThese fields carry forward the order and employer details that were established during the create order step.\n\n| Field | Type | Required | Example Value | Description |\n| --- | --- | --- | --- | --- |\n| `total_price` | `number` | Required | `619.50` | Total amount charged for the package (in INR). |\n| `pack_id` | `integer` | Required | `6` | ID of the subscription package selected by the employer. |\n| `pkId` | `integer` | Required | `6` | Duplicate of `pack_id`; passed separately as required by the API. |\n| `pack_name` | `string` | Required | `COMBOPAC` | Name of the subscription package. |\n| `employer_id` | `integer` | Required | `84` | Unique ID of the employer making the payment. |\n| `email` | `string` | Required | `prakashbansal@hindco.com` | Email address of the employer, used for payment confirmation. |\n| `name` | `string` | Required | `HINDCO` | Name of the employer or company. |\n| `subscription_id` | `string` | Required | `JR-EMP-d22e5ae5` | Internal subscription reference ID generated during the create order step. |\n\n#### Other Fields\n\n| Field | Type | Required | Example Value | Description |\n| --- | --- | --- | --- | --- |\n| `proc_to_checkout` | `integer` | Required | `1` | Fixed flag. Always set to `1` to indicate the request is proceeding to checkout/verification. |\n| `contact` | `string` | Optional | `9820451402` | Employer's contact number. This field is currently **disabled** and not sent with the request. |\n\n---\n\n### Notes\n\n- This endpoint must be called **after** a successful Razorpay payment, using the data returned in the Razorpay success handler.\n    \n- The `razorpay_signature` is critical for server-side payment verification. Do not alter this value.\n    \n- Ensure `razorpay_order_id` and `order_id` contain the same value.\n    \n- Switch the `key` field from a test key (`rzp_test_\\*`) to a live key (`rzp_live_\\*`) before deploying to production.\n    \n- most of the data for this request is carried forward from the response of api request - `employer create order`"
+          },
+          "response": []
+        },
+        {
+          "name": "create order jobseeker",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "jobseeker_id",
+                  "value": "257259",
+                  "type": "text",
+                  "uuid": "a3fa80b4-2954-4fdf-acac-31bfe4a38d2c"
+                },
+                {
+                  "key": "job_id",
+                  "type": "text",
+                  "uuid": "68ba5d3c-1327-4c18-86d4-25148b6a1160",
+                  "value": "51771"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://jobringer.com/api/job_apply_api.php",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "job_apply_api.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "company following",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "jobseeker_id",
+                  "value": "257259",
+                  "type": "text",
+                  "uuid": "a3fa80b4-2954-4fdf-acac-31bfe4a38d2c"
+                },
+                {
+                  "key": "employer_id",
+                  "type": "text",
+                  "uuid": "68ba5d3c-1327-4c18-86d4-25148b6a1160",
+                  "value": "84"
+                },
+                {
+                  "key": "action",
+                  "value": "follow",
+                  "description": "action- status(view current follow status), unfollow, follow",
+                  "type": "text",
+                  "uuid": "9696366c-0159-4bef-8886-2d5c9f23263d"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://jobringer.com/api/company_follow.php",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "company_follow.php"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Common API",
+      "item": [
+        {
+          "name": "application listing api",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "jobseeker_id",
+                  "value": "257259",
+                  "type": "text",
+                  "uuid": "a3fa80b4-2954-4fdf-acac-31bfe4a38d2c",
+                  "description": "//used for jobseeker side to list all his applications",
+                  "disabled": true
+                },
+                {
+                  "key": "job_id",
+                  "type": "text",
+                  "uuid": "68ba5d3c-1327-4c18-86d4-25148b6a1160",
+                  "value": "54",
+                  "description": "//used for employer side to list all application for specfic job",
+                  "disabled": true
+                },
+                {
+                  "key": "employer_id",
+                  "value": "84",
+                  "description": "//used for employer side",
+                  "type": "text",
+                  "uuid": "fe3aedf1-984c-4826-acfd-e156045b161e"
+                },
+                {
+                  "key": "page",
+                  "value": "1",
+                  "description": "for pagination - page number",
+                  "type": "text",
+                  "uuid": "55d86aa2-f52c-4790-93b4-bf876fed39be"
+                },
+                {
+                  "key": "limit",
+                  "value": "10",
+                  "description": "for pagination- total no of records in one call",
+                  "type": "text",
+                  "uuid": "298e3dcd-95a6-4679-8f53-6280819bc6bf"
+                }
+              ]
+            },
+            "url": {
+              "raw": "jobringer.com/api/application_listing_api.php",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "application_listing_api.php"
+              ]
+            },
+            "description": "## Purpose\n\nReturns a paginated list of job applications / applicants for a given job.\n\n## Endpoint\n\n`POST local.jobringer.com/api/application_listing_api.php`\n\n## Request body (multipart/form-data)\n\nRequired fields:\n\n| Field | Type | Description |\n| --- | --- | --- |\n| `jobseeker_id` | number/string | Jobseeker identifier (used for jobseeker-scoped listing). |\n| `job_id` | number/string | Job identifier whose applications/applicants should be returned. |\n| `employer_id` | number/string | Employer identifier (used for employer-scoped listing). |\n| `page` | number | Page number (1-based). |\n| `limit` | number | Page size (max items per page). |\n\n### Pagination\n\n- Use `page` and `limit` to paginate results.\n    \n- Response returns a `jobs` array containing up to `limit` records for the requested `page`.\n    \n\n## Example request\n\n``` bash\ncurl --location 'http://local.jobringer.com/api/application_listing_api.php' \\\n  --form 'jobseeker_id=\"257259\"' \\\n  --form 'job_id=\"52363\"' \\\n  --form 'employer_id=\"84\"' \\\n  --form 'page=\"1\"' \\\n  --form 'limit=\"10\"'\n\n ```\n\n## Example response (200 OK) — summarized\n\n``` json\n{\n  \"success\": true,\n  \"jobs\": [\n    {\n      \"name\": \"…\",\n      \"job_seeker_id\": \"…\",\n      \"job_id\": \"…\",\n      \"email\": \"…\",\n      \"resume_file\": \"…\",\n      \"years_exp\": \"…\",\n      \"months_exp\": \"…\",\n      \"internship_years\": \"…\",\n      \"internship_months\": \"…\",\n      \"contact\": \"…\",\n      \"is_whatsapp\": \"0\",\n      \"unique_code\": \"JR…\",\n      \"profile_type\": \"Working Professional|Fresher|…|false\",\n      \"current_salary_amount\": \"…|null\",\n      \"current_salary_period\": \"Monthly|Annually|false\",\n      \"location\": \"…\",\n      \"functional_area\": \"…\",\n      \"notice_period\": \"…|false\",\n      \"educational_degree\": { \"id\": 38, \"degree\": \"BSc\" } ,\n      \"profile_photo\": \"…\",\n      \"applied_at\": \"YYYY-MM-DD HH:mm:ss\"\n    }\n  ]\n}\n\n ```\n\n## Notes on fields (based on observed 200 response)\n\n- `success` indicates the request was processed successfully.\n    \n- `jobs` is the list of application/applicant records.\n    \n- `job_seeker_id` and `job_id` identify the applicant and job.\n    \n- `resume_file` appears to be a filename stored on the server (may be empty).\n    \n- Experience fields (`years_exp`, `months_exp`, `internship_years`, `internship_months`) are returned as strings in the current response.\n    \n- `is_whatsapp` appears to be a string flag (`\"0\"` observed).\n    \n- `unique_code` is an application/candidate reference code (e.g., `JR…`).\n    \n- Some fields may be `null` or boolean-like `false` (e.g., `profile_type`, `current_salary_period`, `notice_period`) depending on profile completeness.\n    \n- `educational_degree` may be an object (with `id` and `degree`) or `null`.\n    \n- `applied_at` is a timestamp string for when the application was submitted."
+          },
+          "response": [
+            {
+              "name": "application listing api jobseeker list",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "jobseeker_id",
+                      "value": "257259",
+                      "type": "text",
+                      "uuid": "a3fa80b4-2954-4fdf-acac-31bfe4a38d2c"
+                    },
+                    {
+                      "key": "job_id",
+                      "type": "text",
+                      "uuid": "68ba5d3c-1327-4c18-86d4-25148b6a1160",
+                      "value": "51771"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "https://jobringer.com/api/job_apply_api.php",
+                  "protocol": "https",
+                  "host": [
+                    "jobringer",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "job_apply_api.php"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": null,
+              "header": null,
+              "cookie": [],
+              "body": null
+            },
+            {
+              "name": "application listing api employer specific",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "jobseeker_id",
+                      "value": "257259",
+                      "type": "text",
+                      "uuid": "a3fa80b4-2954-4fdf-acac-31bfe4a38d2c"
+                    },
+                    {
+                      "key": "job_id",
+                      "type": "text",
+                      "uuid": "68ba5d3c-1327-4c18-86d4-25148b6a1160",
+                      "value": "51771"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "https://jobringer.com/api/job_apply_api.php",
+                  "protocol": "https",
+                  "host": [
+                    "jobringer",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "job_apply_api.php"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": null,
+              "header": null,
+              "cookie": [],
+              "body": null
+            },
+            {
+              "name": "application listing api job specific",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "jobseeker_id",
+                      "value": "257259",
+                      "type": "text",
+                      "uuid": "a3fa80b4-2954-4fdf-acac-31bfe4a38d2c",
+                      "description": "//used for jobseeker side to list all his applications",
+                      "disabled": true
+                    },
+                    {
+                      "key": "job_id",
+                      "type": "text",
+                      "uuid": "68ba5d3c-1327-4c18-86d4-25148b6a1160",
+                      "value": "52363",
+                      "description": "//used for employer side to list all application for specfic job"
+                    },
+                    {
+                      "key": "employer_id",
+                      "value": "84",
+                      "description": "//used for employer side",
+                      "type": "text",
+                      "uuid": "fe3aedf1-984c-4826-acfd-e156045b161e"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1",
+                      "description": "for pagination - page number",
+                      "type": "text",
+                      "uuid": "55d86aa2-f52c-4790-93b4-bf876fed39be"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10",
+                      "description": "for pagination- total no of records in one call",
+                      "type": "text",
+                      "uuid": "298e3dcd-95a6-4679-8f53-6280819bc6bf"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "local.jobringer.com/api/application_listing_api.php",
+                  "host": [
+                    "local",
+                    "jobringer",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "application_listing_api.php"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": null,
+              "header": null,
+              "cookie": [],
+              "body": null
+            }
+          ]
+        },
+        {
+          "name": "all job roles fetch",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://jobringer.com/api/roles-fetch.php",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "roles-fetch.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "all cities fetch",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://jobringer.com/api/city-fetch.php",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "city-fetch.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "all states fetch",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://jobringer.com/api/state_fetch_api.php",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "state_fetch_api.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "all states fetch Copy",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "local.jobringer.com/api/candidate-pref-fetch.php",
+              "host": [
+                "local",
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "candidate-pref-fetch.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "jobringer stats",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://jobringer.com/api/jobringer_stats_api.php",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "jobringer_stats_api.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "all countries fetch",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://jobringer.com/api/country-fetch.php",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "country-fetch.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "employment type major fetch",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://jobringer.com/api/country-fetch.php",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "country-fetch.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "all functional area fetch",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://jobringer.com/api/functional-area-fetch.php",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "functional-area-fetch.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "keywords autosuggest fetch",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://jobringer.com/api/roles-fetch.php?keyword=sa",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "roles-fetch.php"
+              ],
+              "query": [
+                {
+                  "key": "keyword",
+                  "value": "sa",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "all industry sectors fetch",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://jobringer.com/api/industry-fetch.php",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "industry-fetch.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "all educational degree fetch",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://jobringer.com/api/edu-degrees-fetch.php",
+              "protocol": "https",
+              "host": [
+                "jobringer",
+                "com"
+              ],
+              "path": [
+                "api",
+                "edu-degrees-fetch.php"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "employer details",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "employer_id",
+              "value": "84",
+              "type": "text",
+              "uuid": "6c0d6b55-1a81-432e-9218-b15df8533e1b"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://jobringer.com/api/employer_details_api.php",
+          "protocol": "https",
+          "host": [
+            "jobringer",
+            "com"
+          ],
+          "path": [
+            "api",
+            "employer_details_api.php"
+          ]
+        },
+        "description": "Fetches the complete profile and details of a specific employer by their unique ID. Returns a JSON array containing a single employer object with company information, contact details, verification status, and social media links.\n\n---\n\n## Request Body\n\n**Content-Type:** `multipart/form-data`\n\n| Parameter | Type | Required | Description |\n| --- | --- | --- | --- |\n| `employer_id` | text | Required | The unique numeric ID of the employer whose details are to be fetched. |\n\n---\n\n## Response\n\n**Status:** `200 OK`\n\nReturns a JSON array with a single employer object. The response fields are grouped below:\n\n### Company Info\n\n| Field | Type | Description |\n| --- | --- | --- |\n| `id` | string | Unique employer ID. |\n| `company_name` | string | Registered name of the company. |\n| `email` | string | Primary email address of the company. |\n| `employer_type` | string | Type of employer (e.g., Recruitment Agency, Direct Employer). |\n| `company_unique_no` | string | System-generated unique identifier for the company. |\n| `company_registration_type` | string | Legal registration type (e.g., Proprietorship, Pvt. Ltd.). |\n| `enterprises_categorization` | string | Size category of the enterprise (e.g., Small, Medium, Large). |\n| `company_type` | string | Indicates if the company is Indian or foreign. |\n| `office_type` | string | Type of office (e.g., Head Office, Branch). |\n| `employee_strength` | string | Employee count or office tier description. |\n| `operations` | string | Geographic scope of operations (e.g., Pan India). |\n| `business_house` | string | Business house or group name, if applicable. |\n| `industry` | string | Industry sector the company belongs to. |\n| `products` | string | Products or services offered by the company. |\n| `brands` | string | Brand names associated with the company. |\n| `hq_location` | string | City where the headquarters is located. |\n| `business_turnover` | string | Annual business turnover, if provided. |\n| `company_accreditations` | string | Any accreditations or certifications held. |\n| `company_url` | string | Official website URL of the company. |\n| `is_featured` | string | Whether the employer is featured (`\"1\"`) or not (`\"0\"`). |\n| `lastLogin` | string | Date of the employer's last login (`YYYY-MM-DD`). |\n\n### Location\n\n| Field | Type | Description |\n| --- | --- | --- |\n| `countries` | string | Country where the company is located. |\n| `state` | string | State where the company is located. |\n| `cities` | string | City where the company is located. |\n| `locality` | string | Locality or area within the city. |\n| `pincode` | string | Postal/ZIP code of the company address. |\n\n### Contact Info\n\n| Field | Type | Description |\n| --- | --- | --- |\n| `company_country_code` | string | null |\n| `company_contact_number` | string | null |\n| `is_contact_hidden` | string | Whether contact details are hidden from public (`\"1\"` = hidden). |\n| `contact_person_name` | string | Name of the primary contact person. |\n| `contact_person_designation` | string | Designation/title of the contact person. |\n| `contact_person_country_code` | string | Country dialing code for the contact person's mobile. |\n| `contact_person_mobile` | string | Mobile number of the contact person. |\n| `contact_person_landline` | string | Landline number of the contact person. |\n| `contact_person_email` | string | Primary email of the contact person. |\n| `contact_person_email1` | string | Secondary email of the contact person. |\n| `contact_person_email2` | string | Tertiary email of the contact person. |\n\n### Verification\n\n| Field | Type | Description |\n| --- | --- | --- |\n| `checkVerified` | integer | Overall verification status (`1` = verified). |\n| `is_gst_registered` | string | Whether the company is GST registered (`\"1\"` = yes). |\n| `gst_number` | string | GST identification number. |\n| `is_gst_verified` | string | Whether the GST number has been verified (`\"1\"` = yes). |\n| `pan_no` | string | PAN (Permanent Account Number) of the company. |\n| `is_pan_verified` | string | Whether the PAN has been verified (`\"1\"` = yes). |\n| `msme` | string | null |\n| `company_name_as_per_gst_pan` | string | Company name as it appears on GST/PAN documents. |\n\n### Social Links\n\n| Field | Type | Description |\n| --- | --- | --- |\n| `company_url` | string | Official website URL. |\n| `facebook_link` | string | Facebook page URL. |\n| `instagram_link` | string | Instagram profile URL. |\n| `twitter_link` | string | Twitter/X profile URL. |\n| `linkedin_link` | string | LinkedIn company page URL. |\n| `youtube_link` | string | null |\n| `others_link` | string | null |"
+      },
+      "response": []
+    },
+    {
+      "name": "job listing api basic Copy",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "limit",
+              "value": "21",
+              "type": "text",
+              "uuid": "c9b588e0-e373-46c9-a97d-71a9fde8d201"
+            },
+            {
+              "key": "page",
+              "value": "1",
+              "type": "text",
+              "uuid": "6f27f389-9ff6-4349-a5fe-13b65d5c8e27"
+            },
+            {
+              "key": "keywords",
+              "value": "hindco",
+              "type": "text",
+              "uuid": "5cd17522-49c4-4c3d-a3d5-bea2bf1639b1"
+            },
+            {
+              "key": "functional_area",
+              "value": "Banking / Credit Cards / E-Commerce Payment Gateway",
+              "type": "text",
+              "uuid": "1d6c7e28-214a-44f5-b3d1-602ba0a12af0",
+              "disabled": true
+            },
+            {
+              "key": "industry",
+              "value": "IT - Software / Product Development",
+              "type": "text",
+              "uuid": "54ab675e-5cd3-484a-a6a2-ee5d3f4e8f1a",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "jobringer.com/api/job_list_api.php",
+          "host": [
+            "jobringer",
+            "com"
+          ],
+          "path": [
+            "api",
+            "job_list_api.php"
+          ],
+          "query": [
+            {
+              "key": "featured",
+              "value": null,
+              "disabled": true
+            },
+            {
+              "key": "keywords",
+              "value": "mumbai",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "password verify employer Copy",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\":\"test_user@jobringer.com\",\r\n    \"password\":\"Flittle@62\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://jobringer.com/api/user_login_api.php?endpoint=verify-employer",
+          "protocol": "https",
+          "host": [
+            "jobringer",
+            "com"
+          ],
+          "path": [
+            "api",
+            "user_login_api.php"
+          ],
+          "query": [
+            {
+              "key": "endpoint",
+              "value": "verify-employer"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "password update api",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"jobseeker_id\":\"257259\",\r\n    \"password\":\"Str0nt!um\",\r\n    \"new_password\":\"L00k3r\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://jobringer.com/api/password_update_api.php",
+          "protocol": "https",
+          "host": [
+            "jobringer",
+            "com"
+          ],
+          "path": [
+            "api",
+            "password_update_api.php"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "job apply api",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "jobseeker_id",
+              "value": "854745",
+              "type": "text",
+              "uuid": "5ff1c1ea-e6f6-4ebb-bbba-8c1d739618ca"
+            },
+            {
+              "key": "job_id",
+              "value": "52363",
+              "type": "text",
+              "uuid": "d8e4c5e7-1da7-48eb-83d4-aee95fdaf1c5"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://jobringer.com/api/job_apply_api.php",
+          "protocol": "https",
+          "host": [
+            "jobringer",
+            "com"
+          ],
+          "path": [
+            "api",
+            "job_apply_api.php"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "job detail api",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "job_id",
+              "value": "58153",
+              "type": "text",
+              "uuid": "a7ed97bd-dac4-4077-94b7-19d294fd025f"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://jobringer.com/api/job_detail_employer_api.php",
+          "protocol": "https",
+          "host": [
+            "jobringer",
+            "com"
+          ],
+          "path": [
+            "api",
+            "job_detail_employer_api.php"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "job detail api Copy",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ]
+}
